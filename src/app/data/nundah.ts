@@ -6,6 +6,13 @@ export const NUNDAH: Suburb = {
         male: 6006,
         female: 6133,
         averageDisposableIncome: 334, // Weekly
-        familyHouseholds: 2956
+        familyHouseholds: 2956,
+        ageRange: {
+            genZ: 2005,
+            millenials: 5539,
+            genX: 1576,
+            babyBoomers: 2202,
+            traditionalists: 821
+        }
     }
 }
