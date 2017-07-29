@@ -1,0 +1,24 @@
+section.loading-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    div.loading-sequence {
+        position: relative;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+    }
+    div.spritesheet {
+        width: 889px;
+        height: 389px;
+        background: url('/assets/images/loading.png') center top;
+        animation: play 2.5s steps(45) infinite;
+    }
+}
+
+@keyframes play {
+   100% { background-position: 0 -17505px; }
+}
