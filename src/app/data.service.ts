@@ -15,12 +15,12 @@ export class DataService {
       return null;
     }
   }
-  getCrimeData(suburb: string): Crime {
-    if (suburb == 'NUNDAH') {
-      return NUNDAH.crime;
-    } else {
-      return null;
-    }
-  }
+  // getCrimeData(suburb: string): Crime {
+  //   if (suburb == 'NUNDAH') {
+  //     return NUNDAH.crime;
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
 }

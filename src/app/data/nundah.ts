@@ -40,5 +40,16 @@ export const NUNDAH: Suburb = {
                 amount: 154
             },
         ]
+    },
+    pointOfInterest: {
+        restaurants: 16,
+        cafe: 15,
+        parks: 5,
+        shoppingMalls: 2
+    },
+    publicFacilities: {
+        schools: 4,
+        hospitals: 7,
+        busStops: 8
     }
 }

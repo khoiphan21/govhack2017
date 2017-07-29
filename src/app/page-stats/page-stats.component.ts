@@ -21,7 +21,8 @@ export class PageStatsComponent implements OnInit {
 
   ngOnInit() {
     let d3 = this.d3; // for convenience use a block scope variable
-
+    
+    
     d3.select('#arc')
       .append('svg')
         .attr('width', 600)
