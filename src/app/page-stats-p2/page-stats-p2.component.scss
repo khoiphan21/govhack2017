@@ -1,6 +1,26 @@
 @import '../sass/variables';
 @import '../sass/mixins';
 @import '../sass/globalStyles';
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    @include row-center();
+    .modal-container {
+        background: white;
+        @include column-center();
+        border-radius: 5px;
+        margin-top: 10vh;
+        color: $font-blue-green;
+        font-size: 14pt;
+        padding: 2vh 10vw;
+    }
+}
+
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background: $transparent-white;
@@ -72,9 +92,31 @@
                     grid-row-gap: 10vh;
                     margin-top: 2vh;
                     .marital-dtl-data {
+                        @include row-center();
+                        align-items: flex-end;
                         width: 17vw;
                         img {
-                            height: 30vh;
+                            max-height: 30vh;
+                            max-width: 17vw;
+                        }
+                    }
+                }
+            }
+            .dwelling {
+                font-size: 12pt;
+                margin-top: 7vh;
+                .dwelling-dtl {
+                    display: grid;
+                    grid-template-columns: 20vw 20vw 20vw 20vw;
+                    grid-row-gap: 10vh;
+                    margin-top: 2vh;
+                    .dwelling-dtl-data {
+                        @include row-center();
+                        align-items: flex-end;
+                        width: 17vw;
+                        img {
+                            max-height: 30vh;
+                            max-width: 12vw;
                         }
                     }
                 }
@@ -128,17 +170,33 @@
                 }
             }
             .marketplace {
-                font-size: 12pt;
+                font-size: 10pt;
                 margin-top: 7vh;
                 .marketplace-dtl {
-                    display: grid;
-                    grid-template-columns: 20vw 20vw 20vw 20vw;
-                    grid-row-gap: 10vh;
-                    margin-top: 2vh;
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-top: 5vh;
                     .marketplace-dtl-data {
-                        width: 17vw;
-                        img {
-                            height: 30vh;
+                        width: 30vw;
+                        @include column-center();
+                        align-items: flex-start;
+                        line-height: 150%;
+                        span {
+                            text-transform: uppercase;
+                        }
+                        .number {
+                            font-size: 16pt;
+                        }
+                        article {
+                            display: flex;
+                            justify-content: flex-start;
+                            span:nth-child(1) {
+                                margin-right: 3vw;
+                            }
+                            span:nth-child(2) {
+                                color: $font-yellow;
+                                text-decoration: underline;
+                            }
                         }
                     }
                 }
