@@ -1,4 +1,4 @@
-<section class="main-container">
+<section class="main-container" (click)="hideSuggestion()">
     <section class="top-container">
         <img src="/assets/images/logo.png" alt="company logo">
     </section>
@@ -9,10 +9,8 @@
         </section>
         <section class="form">
             <form action="">
-                <input list="browsers" type="text" name="location" placeholder="Enter the location you want to look at...">
-                <datalist id="browsers">
-                    <option value="1/1207 Sandgate Rd, Nundah QLD 4102">
-                </datalist>
+                <input list="browsers" [(ngModel)]="inputText" type="text" name="location" placeholder="Enter the location you want to look at..." (click)="showSuggestion($event)"/>
+                <p *ngIf="isSuggestionShown" (click)="selectAddress()">{{address}}</p>
                 <button type="submit" name="submit">
                     <span>Continue</span>
                     <span>&#9655;</span>
