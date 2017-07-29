@@ -10,13 +10,13 @@
     box-sizing: border-box;
     overflow: hidden;
     /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(left, $theme-maroon, $theme-dark-maroon);
+    background: -webkit-linear-gradient(top, $theme-maroon, darken($theme-dark-maroon, 50));
     /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, $theme-maroon, $theme-dark-maroon);
+    background: -o-linear-gradient(bottom, $theme-maroon, darken($theme-dark-maroon, 50));
     /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, $theme-maroon, $theme-dark-maroon);
+    background: -moz-linear-gradient(bottom, $theme-maroon, darken($theme-dark-maroon, 50));
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, $theme-maroon, $theme-dark-maroon);
+    background: linear-gradient(to bottom, $theme-maroon, darken($theme-dark-maroon, 50));
     /* Standard syntax */
     color: $theme-green;
     line-height: 150%;
@@ -24,7 +24,6 @@
     .left-container {
         width: 90vw;
         height: 100%;
-        background: $theme-maroon;
         overflow-y: scroll;
         .left-top {
             height: 20%;

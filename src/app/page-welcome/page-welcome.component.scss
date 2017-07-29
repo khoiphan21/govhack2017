@@ -99,6 +99,7 @@
             }
             button[type=submit],
             select {
+                cursor: pointer;
                 @include transition-basic();
                 -webkit-animation: fadein 2s;
                 /* Safari, Chrome and Opera > 12.1 */
