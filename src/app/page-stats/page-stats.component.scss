@@ -160,6 +160,19 @@
             @include column-center();
             position: absolute;
             top: 100px;
+            .arrow-button {
+                margin-top: 1vh;
+                @include transition-basic();
+                width: 7vh;
+                height: 7vh;
+                background-image: url('/assets/buttons/button-unactive.png');
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                &:hover {
+                    background-image: url('/assets/buttons/button-active.png');
+                }
+            }
         }
     }
 }
