@@ -11,6 +11,7 @@ import { D3Service } from 'd3-ng2-service';
 import { PageStatsComponent } from './page-stats/page-stats.component';
 import { PageMapComponent } from './page-map/page-map.component';
 import { PageStatsP2Component } from './page-stats-p2/page-stats-p2.component';
+import { PageLoadingComponent } from './page-loading/page-loading.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PageStatsP2Component } from './page-stats-p2/page-stats-p2.component';
     PageWelcomeComponent,
     PageStatsComponent,
     PageMapComponent,
-    PageStatsP2Component
+    PageStatsP2Component,
+    PageLoadingComponent
   ],
   imports: [
     BrowserModule,
