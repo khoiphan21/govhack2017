@@ -23,17 +23,25 @@ export class PageMapComponent implements OnInit {
     var wooloowin = { lat: -27.4151, lng: 153.0457 };
     var clayfield = { lat: -27.4180, lng: 153.0570 };
     var wavellHeights = { lat: -27.3930, lng: 153.0480 };
+    var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
 
     var map = new google.maps.Map(document.getElementById('left-container'), {
       zoom: 13,
       center: nundah
     });
 
+    var markerMain = new google.maps.Marker({
+      position: nundah,
+      map: map,
+      title: 'Nundah',
+      icon: image
+    });
+
     var marker = new google.maps.Marker({
       position: kedron,
       map: map,
       label: '1',
-      title: 'Kedron'
+      title: 'Kedron',
     });
 
     var marker2 = new google.maps.Marker({
