@@ -1,15 +1,15 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
-import { slideInDownAnimation } from '../animations';
+import { fadeOutAnimation } from '../animations';
 
 @Component({
   selector: 'app-page-loading',
   templateUrl: './page-loading.component.html',
   styleUrls: ['./page-loading.component.scss'],
-  animations: [slideInDownAnimation]
+  animations: [fadeOutAnimation]
 })
 export class PageLoadingComponent implements OnInit {
-  @HostBinding('@slideInAnimation') routeAnimation = true;
+  @HostBinding('@fadeOutAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';
 
@@ -18,9 +18,9 @@ export class PageLoadingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.router.navigate(['welcome']);
-    }, 3000)
+    // setTimeout(() => {
+    //   this.router.navigate(['welcome']);
+    // }, 3000)
   }
 
 }
