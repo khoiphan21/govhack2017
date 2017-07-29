@@ -10,13 +10,13 @@ import { PointOfInterest } from '../classes/pointOfInterest';
 import { PublicFacilities } from '../classes/publicFacilities';
 
 @Component({
-  selector: 'app-page-stats-1',
-  templateUrl: './page-stats-1.component.html',
-  styleUrls: ['./page-stats-1.component.scss'],
+  selector: 'app-page-stats-5',
+  templateUrl: './page-stats-5.component.html',
+  styleUrls: ['./page-stats-5.component.scss'],
   animations: [slideInRightAnimation]
 })
-export class PageStats1Component implements OnInit {
-  @HostBinding('@slideInRightAnimation') routeAnimation = true;
+export class PageStats5Component implements OnInit {
+@HostBinding('@slideInRightAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';
 
@@ -25,7 +25,7 @@ export class PageStats1Component implements OnInit {
 
   // Variables for public facilities
   publicFacilities: PublicFacilities;
-  
+
   // Variables for the demographic data
   demographicData: Demographic;
   genZ: string;
@@ -84,3 +84,5 @@ export class PageStats1Component implements OnInit {
   }
 
 }
+
+

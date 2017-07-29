@@ -10,13 +10,13 @@ import { PointOfInterest } from '../classes/pointOfInterest';
 import { PublicFacilities } from '../classes/publicFacilities';
 
 @Component({
-  selector: 'app-page-stats-1',
-  templateUrl: './page-stats-1.component.html',
-  styleUrls: ['./page-stats-1.component.scss'],
+  selector: 'app-page-stats-2',
+  templateUrl: './page-stats-2.component.html',
+  styleUrls: ['./page-stats-2.component.scss'],
   animations: [slideInRightAnimation]
 })
-export class PageStats1Component implements OnInit {
-  @HostBinding('@slideInRightAnimation') routeAnimation = true;
+export class PageStats2Component implements OnInit {
+@HostBinding('@slideInRightAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';
 

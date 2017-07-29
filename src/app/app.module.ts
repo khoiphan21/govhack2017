@@ -14,6 +14,10 @@ import { PageStatsP2Component } from './page-stats-p2/page-stats-p2.component';
 import { PageLoadingComponent } from './page-loading/page-loading.component';
 import { LoadingComponent } from './loading/loading.component';
 import { PageStats1Component } from './page-stats-1/page-stats-1.component';
+import { PageStats2Component } from './page-stats-2/page-stats-2.component';
+import { PageStats3Component } from './page-stats-3/page-stats-3.component';
+import { PageStats4Component } from './page-stats-4/page-stats-4.component';
+import { PageStats5Component } from './page-stats-5/page-stats-5.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { PageStats1Component } from './page-stats-1/page-stats-1.component';
     PageStatsP2Component,
     PageLoadingComponent,
     LoadingComponent,
-    PageStats1Component
+    PageStats1Component,
+    PageStats2Component,
+    PageStats3Component,
+    PageStats4Component,
+    PageStats5Component
   ],
   imports: [
     BrowserModule,
