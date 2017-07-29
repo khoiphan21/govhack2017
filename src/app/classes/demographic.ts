@@ -1,4 +1,6 @@
 import { AgeRange } from './ageRange';
+import { CountryOfBirth } from './countryOfBirth';
+
 export class Demographic {
     totalPopulation: number;
     female: number;
@@ -6,4 +8,5 @@ export class Demographic {
     averageDisposableIncome: number; // weekly
     familyHouseholds: number; // As a percentage
     ageRange: AgeRange;
+    countryOfBirth: CountryOfBirth[];
 }
