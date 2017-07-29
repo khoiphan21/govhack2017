@@ -3,12 +3,12 @@ import { slideInRightAnimation } from '../animations';
 declare var google: any;
 
 @Component({
-  selector: 'app-page-map',
-  templateUrl: './page-map.component.html',
-  styleUrls: ['./page-map.component.scss'],
+  selector: 'app-page-map-p2',
+  templateUrl: './page-map-p2.component.html',
+  styleUrls: ['./page-map-p2.component.scss'],
   animations: [slideInRightAnimation]
 })
-export class PageMapComponent implements OnInit {
+export class PageMapP2Component implements OnInit {
   @HostBinding('@slideInRightAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';

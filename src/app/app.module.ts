@@ -18,6 +18,7 @@ import { PageStats2Component } from './page-stats-2/page-stats-2.component';
 import { PageStats3Component } from './page-stats-3/page-stats-3.component';
 import { PageStats4Component } from './page-stats-4/page-stats-4.component';
 import { PageStats5Component } from './page-stats-5/page-stats-5.component';
+import { PageMapP2Component } from './page-map-p2/page-map-p2.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { PageStats5Component } from './page-stats-5/page-stats-5.component';
     PageStats2Component,
     PageStats3Component,
     PageStats4Component,
-    PageStats5Component
+    PageStats5Component,
+    PageMapP2Component
   ],
   imports: [
     BrowserModule,

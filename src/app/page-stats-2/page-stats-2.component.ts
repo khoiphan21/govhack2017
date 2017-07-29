@@ -41,13 +41,21 @@ export class PageStats2Component implements OnInit {
 
   // Variables for ethnicities
   ethnicities: string[] = []; // Country names
+  ethnicityValues: string[] = []; // go straight to style.width for the bar
+  ethnicBarColors: string[] = [
+    '#728780', 
+    '#95D6BE',
+    '#F3AB70',
+    '#C2CFBD',
+    '#CE3E77',
+  ]; // index must match the index of the countries
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.demographicData = this.dataService.getDemographicData('KEDRON');
-    this.pointOfInterest = this.dataService.getPOI('KEDRON');
-    this.publicFacilities = this.dataService.getPublicFacilities('KEDRON');
+    this.demographicData = this.dataService.getDemographicData('HENDRA');
+    this.pointOfInterest = this.dataService.getPOI('HENDRA');
+    this.publicFacilities = this.dataService.getPublicFacilities('HENDRA');
 
     // SETUP THE DEMOGRAPHIC DATA
     let maxAgeRange = Math.max(
@@ -80,6 +88,10 @@ export class PageStats2Component implements OnInit {
       if (country.amount > maxPeople) {
         maxPeople = country.amount;
       }
+    })
+    // Now calculate the length of the bar
+    _.each(countriesOfBirth, value => {
+      this.ethnicityValues.push(`${value / maxPeople * 100}%`)
     })
   }
 

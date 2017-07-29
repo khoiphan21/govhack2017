@@ -177,18 +177,18 @@
                         <div class="bar-segment" *ngFor="let ethnicityValue of ethnicityValues; let index = index" [style.width]="ethnicityValue" [style.background]="ethnicBarColors[index]" [style.display]="index < 5 ? 'block' : 'none'"></div>
                     </div>
                     <div class="legend">
-                        <!-- <div class="legend-item" *ngFor="let country of ethnicities; let i = index" [style.display]="i < 5 ? 'flex' : 'none'">
+                        <div class="legend-item" *ngFor="let country of ethnicities; let i = index" [style.display]="i < 5 ? 'flex' : 'none'">
                             <p>{{country}}</p>
                             <div class="item-color" [style.background]="ethnicBarColors[i]">
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </section>
             </section>
         </section>
     </section>
     <section class="right-container">
-        <section class="explore" routerLink="/welcome/maps">
+        <section class="explore" routerLink="/welcome/maps2">
             <span>Explore</span>
             <span>Similar</span>
             <span>Places</span>
