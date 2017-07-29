@@ -17,20 +17,53 @@ export class PageMapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-   var myLatLng = { lat: -25.363, lng: 131.044 };
+    var nundah = { lat: -27.4020, lng: 153.0660 };
+    var kedron = { lat: -27.4070, lng: 153.0340 };
+    var hendra = { lat: -27.4180, lng: 153.0710 };
+    var wooloowin = { lat: -27.4151, lng: 153.0457 };
+    var clayfield = { lat: -27.4180, lng: 153.0570 };
+    var wavellHeights = { lat: -27.3930, lng: 153.0480 };
 
-   var map = new google.maps.Map(document.getElementById('left-container'), {
-     zoom: 15,
-     center: myLatLng
-   });
+    var map = new google.maps.Map(document.getElementById('left-container'), {
+      zoom: 13,
+      center: nundah
+    });
 
-   var marker = new google.maps.Marker({
-     position: myLatLng,
-     map: map,
-     title: 'Hello World!'
-   });
+    var marker = new google.maps.Marker({
+      position: kedron,
+      map: map,
+      label: '1',
+      title: 'Kedron'
+    });
 
- }
+    var marker2 = new google.maps.Marker({
+      position: hendra,
+      map: map,
+      label: '2',
+      title: 'Hendra'
+    });
+
+    var marker3 = new google.maps.Marker({
+      position: wooloowin,
+      map: map,
+      label: '3',
+      title: 'wooloowin'
+    });
+
+    var marker4 = new google.maps.Marker({
+      position: clayfield,
+      map: map,
+      label: '4',
+      title: 'Clayfield'
+    });
+
+    var marker5 = new google.maps.Marker({
+      position: wavellHeights,
+      map: map,
+      label: '5',
+      title: 'Wavell Heights'
+    });
+  }
 
 
 
