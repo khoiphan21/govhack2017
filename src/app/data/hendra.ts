@@ -1,6 +1,6 @@
 import { Suburb } from '../classes/suburb';
 
-export const hendra: Suburb = {
+export const HENDRA: Suburb = {
     demographic: {
         totalPopulation: 4625,
         male: 2273,

@@ -1,0 +1,198 @@
+<section class="main-container">
+    <section class="left-container">
+        <section class="left-top">
+            <img src="/assets/images/logo.png" alt="company logo" routerLink="/welcome">
+        </section>
+        <section class="left-mid">
+            <section class="back-button" routerLink="/welcome">
+                <img src="/assets/buttons/back-green.png">
+                <span>Go back</span>
+            </section>
+            <!-- This is the section for the address details -->
+            <section class="location">
+                <span class="title">Exploring</span>
+                <span class="address">1/24 Sadlier Street | NUNDAH, QLD 4031</span>
+                <div class="location-dtl">
+                    <span>Within 10km</span>
+                    <span>change</span>
+                </div>
+            </section>
+            <!-- This is the section for point of interest -->
+            <section class="poi">
+                <span class="title">POINTS OF INTEREST</span>
+                <section class="poi-dtl">
+                    <article class="poi-dtl-data data1">
+                        <img src="/assets/icons/restaurant.png" alt="restaurant icon">
+                        <article>
+                            <span>{{pointOfInterest.restaurants}}</span>
+                            <span>RESTAURANTS</span>
+                        </article>
+                    </article>
+                    <article class="poi-dtl-data data2">
+                        <img src="/assets/icons/cafe.png" alt="cafe icon">
+                        <article>
+                            <span>{{pointOfInterest.cafe}}</span>
+                            <span>Cafe</span>
+                        </article>
+                    </article>
+                    <article class="poi-dtl-data data3">
+                        <img src="/assets/icons/park.png" alt="park icon">
+                        <article>
+                            <span>{{pointOfInterest.parks}}</span>
+                            <span>parks</span>
+                        </article>
+                    </article>
+                    <article class="poi-dtl-data data4">
+                        <img src="/assets/icons/shopping-mall.png" alt="shopping mall icon">
+                        <article>
+                            <span>{{pointOfInterest.shoppingMalls}}</span>
+                            <span>shopping malls</span>
+                        </article>
+                    </article>
+                </section>
+            </section>
+            <section class="poi">
+                <span class="title">public facilities</span>
+                <section class="poi-dtl">
+                    <article class="poi-dtl-data data5">
+                        <img src="/assets/icons/schools.png" alt="school icon">
+                        <article>
+                            <span>{{publicFacilities.schools}}</span>
+                            <span>schools</span>
+                        </article>
+                    </article>
+                    <article class="poi-dtl-data data6">
+                        <img src="/assets/icons/hospital.png" alt="hospital icon">
+                        <article>
+                            <span>{{publicFacilities.hospitals}}</span>
+                            <span>hospitals</span>
+                        </article>
+                    </article>
+                    <article class="poi-dtl-data data7">
+                        <img src="/assets/icons/bus-stop.png" alt="bus stop icon">
+                        <article>
+                            <span>{{publicFacilities.busStops}}</span>
+                            <span>bus stops</span>
+                        </article>
+                    </article>
+                </section>
+            </section>
+            <!-- This is the section for point of suburb -->
+            <section class="suburb">
+                <span class="suburb-title">suburb information</span>
+                <span class="title">demographics</span>
+                <section class="suburb-dtl">
+                    <div class="person">
+                        <img src="/assets/images/male.png" alt="male icon">
+                        <span>{{malePercentage}}%</span>
+                        <span>Males</span>
+                    </div>
+                    <div id="demographic-chart">
+                        <div id="chart-wrapper">
+                            <svg class="chart"></svg>
+                        </div>
+                        <div class="demographic-content">
+                            <div>
+                                <p class="population">total population</p>
+                                <p class="value">{{totalPopulation}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="person">
+                        <img src="/assets/images/female.png" alt="female icon">
+                        <span>{{femalePercentage}}%</span>
+                        <span>Females</span>
+                    </div>
+                    <div class="data">
+                        <div>
+                            <span>Average Disposable Income</span>
+                            <span>${{averageDisposableIncome}} / week</span>
+                        </div>
+                        <div>
+                            <span>Number of family households</span>
+                            <span>{{familyHouseholds}}</span>
+                        </div>
+                        <div>
+                            <span>Population Density</span>
+                            <span>1733 / km&#178;</span>
+                        </div>
+                    </div>
+                </section>
+                <span class="title">generational breakdown</span>
+                <section class="generational-breakdown">
+                    <div class="generation">
+                        <div class="title">
+                            <p class="title">Gen Z</p>
+                            <p class="age">(age 0 - 19)</p>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" [style.width]="genZ"></div>
+                        </div>
+                        <div class="value">{{demographicData.ageRange.genZ}}</div>
+                    </div>
+                    <div class="generation">
+                        <div class="title">
+                            <p class="title">Millennials</p>
+                            <p class="age">(age 20 - 39)</p>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" [style.width]="millenials"> </div>
+                        </div>
+                        <div class="value">{{demographicData.ageRange.millenials}}</div>
+                    </div>
+                    <div class="generation">
+                        <div class="title">
+                            <p class="title">Gen X</p>
+                            <p class="age">(age 40 - 49)</p>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" [style.width]="genX"></div>
+                        </div>
+                        <div class="value">{{demographicData.ageRange.genX}}</div>
+                    </div>
+                    <div class="generation">
+                        <div class="title">
+                            <p class="title">Baby Boomers</p>
+                            <p class="age">(age 50 - 69)</p>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" [style.width]="babyBoomers"> </div>
+                        </div>
+                        <div class="value">{{demographicData.ageRange.babyBoomers}}</div>
+                    </div>
+                    <div class="generation">
+                        <div class="title">
+                            <p class="title">Traditionalists</p>
+                            <p class="age">(age 70+)</p>
+                        </div>
+                        <div class="bar">
+                            <div class="bar-fill" [style.width]="traditionalists"></div>
+                        </div>
+                        <div class="value">{{demographicData.ageRange.traditionalists}}</div>
+                    </div>
+                </section>
+                <span class="title">major ethnicities</span>
+                <section class="ethnicities">
+                    <div class="bar">
+                        <div class="bar-segment" *ngFor="let ethnicityValue of ethnicityValues; let index = index" [style.width]="ethnicityValue" [style.background]="ethnicBarColors[index]" [style.display]="index < 5 ? 'block' : 'none'"></div>
+                    </div>
+                    <div class="legend">
+                        <!-- <div class="legend-item" *ngFor="let country of ethnicities; let i = index" [style.display]="i < 5 ? 'flex' : 'none'">
+                            <p>{{country}}</p>
+                            <div class="item-color" [style.background]="ethnicBarColors[i]">
+                            </div>
+                        </div> -->
+                    </div>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="right-container">
+        <section class="explore" routerLink="/welcome/maps">
+            <span>Explore</span>
+            <span>Similar</span>
+            <span>Places</span>
+            <div class="arrow-button"></div>
+        </section>
+    </section>
+</section>

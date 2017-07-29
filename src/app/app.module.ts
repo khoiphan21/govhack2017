@@ -13,6 +13,7 @@ import { PageMapComponent } from './page-map/page-map.component';
 import { PageStatsP2Component } from './page-stats-p2/page-stats-p2.component';
 import { PageLoadingComponent } from './page-loading/page-loading.component';
 import { LoadingComponent } from './loading/loading.component';
+import { PageStats1Component } from './page-stats-1/page-stats-1.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoadingComponent } from './loading/loading.component';
     PageMapComponent,
     PageStatsP2Component,
     PageLoadingComponent,
-    LoadingComponent
+    LoadingComponent,
+    PageStats1Component
   ],
   imports: [
     BrowserModule,

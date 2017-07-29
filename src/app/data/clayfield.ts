@@ -1,6 +1,6 @@
 import { Suburb } from '../classes/suburb';
 
-export const clayfield: Suburb = {
+export const CLAYFIELD: Suburb = {
     demographic: {
         totalPopulation: 10555,
         male: 5042,

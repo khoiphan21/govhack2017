@@ -1,6 +1,6 @@
 import { Suburb } from '../classes/suburb';
 
-export const kedron: Suburb = {
+export const KEDRON: Suburb = {
     demographic: {
         totalPopulation: 9359,
         male: 4578,

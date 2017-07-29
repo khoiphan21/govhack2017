@@ -34,7 +34,7 @@ export class PageWelcomeComponent implements OnInit {
 
   toStatsPage() {
     if (this.inputText == this.address) {
-      this.router.navigate(['welcome/stats'])
+      this.router.navigate(['welcome/stats-nundah'])
     } else {
       this.isError = true;
       this.hideSuggestion();
