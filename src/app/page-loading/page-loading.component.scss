@@ -7,6 +7,9 @@ section.main-container {
     box-sizing: border-box;
     overflow: hidden;
     background-image: url('/assets/images/bistro-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     flex-direction: row;
     justify-content: center;

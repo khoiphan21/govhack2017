@@ -4,7 +4,7 @@
             <img src="/assets/images/logo.png" alt="company logo" routerLink="/welcome">
         </section>
         <section class="left-mid">
-            <section class="back-button">
+            <section class="back-button" routerLink="/welcome">
                 <img src="/assets/buttons/back-green.png">
                 <span>Go back</span>
             </section>
@@ -84,7 +84,7 @@
                 <section class="suburb-dtl">
                     <div class="person">
                         <img src="/assets/images/male.png" alt="male icon">
-                        <span>45%</span>
+                        <span>{{malePercentage}}%</span>
                         <span>Males</span>
                     </div>
                     <div id="demographic-chart">
@@ -94,23 +94,23 @@
                         <div class="demographic-content">
                             <div>
                                 <p class="population">total population</p>
-                                <p class="value">4,390</p>
+                                <p class="value">{{totalPopulation}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="person">
                         <img src="/assets/images/female.png" alt="female icon">
-                        <span>55%</span>
+                        <span>{{femalePercentage}}%</span>
                         <span>Females</span>
                     </div>
                     <div class="data">
                         <div>
                             <span>Average Disposable Income</span>
-                            <span>$745 / week</span>
+                            <span>${{averageDisposableIncome}} / week</span>
                         </div>
                         <div>
                             <span>Number of family households</span>
-                            <span>5422</span>
+                            <span>{{familyHouseholds}}</span>
                         </div>
                         <div>
                             <span>Population Density</span>
