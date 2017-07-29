@@ -413,6 +413,17 @@
             }
         }
     }
+    .right-container-greyout {
+        width: 10vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include row-center();
+        text-align: center;
+        color: white;
+    }
 }
 
 .title {
