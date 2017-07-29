@@ -14,11 +14,15 @@ section.loading-wrapper {
     div.spritesheet {
         width: 889px;
         height: 389px;
-        background: url('/assets/images/loading.png') center top;
+        background-image: url('/assets/images/loading.png');
+        background-repeat: no-repeat;
+        background-position: center top;
         animation: play 2.5s steps(45) infinite;
     }
 }
 
 @keyframes play {
-   100% { background-position: 0 -17505px; }
+    100% {
+        background-position: 0 -17505px;
+    }
 }
