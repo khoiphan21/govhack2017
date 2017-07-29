@@ -83,6 +83,65 @@
                     }
                 }
             }
+            .suburb {
+                margin-top: 10vh;
+                display: flex;
+                flex-direction: column;
+                .suburb-title {
+                    font-size: 24pt;
+                    text-transform: uppercase;
+                    margin-bottom: 7vh;
+                }
+                .suburb-dtl {
+                    display: flex;
+                    margin-top: 5vh;
+                    .person {
+                        @include column-center();
+                        line-height: 150%;
+                        img {
+                            height: 25vh;
+                        }
+                        span:nth-child(2) {
+                            font-size: 16pt;
+                            margin-top: 2vh;
+                        }
+                        span:nth-child(3) {
+                            font-size: 10pt;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .arc {
+                        margin-left: 10vw;
+                        margin-right: 10vw;
+                        border-radius: 500px;
+                        width: 40vh;
+                        height: 40vh;
+                        background: black;
+                        border: white solid 1px;
+                    }
+                    .data {
+                        margin-left: 13vw;
+                        @include column-center();
+                        line-height: 100%;
+                        align-items: flex-start;
+                        div {
+                            @include column-center();
+                            align-items: flex-start;
+                            span:nth-child(1) {
+                                font-size: 10pt;
+                                text-transform: uppercase;
+                            }
+                            span:nth-child(2) {
+                                font-size: 16pt;
+                                margin-top: 2vh;
+                            }
+                        }
+                        div:nth-child(2) {
+                            margin-top: 5vh;
+                        }
+                    }
+                }
+            }
         }
     }
 }
