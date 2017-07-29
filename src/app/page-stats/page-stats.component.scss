@@ -36,7 +36,10 @@
         }
         .left-mid {
             padding: 5vh 2vw;
+            line-height: 200%;
             .location {
+                @include column-center();
+                align-items: flex-start;
                 .address {
                     font-size: 24pt;
                 }
@@ -69,7 +72,7 @@
                         article {
                             @include column-center();
                             align-items: flex-start;
-                            line-height: 100%;
+                            line-height: 150%;
                             margin-left: 1vw;
                             span:nth-child(1) {
                                 font-size: 16pt;

@@ -1,6 +1,6 @@
 import { Suburb } from '../classes/suburb';
 
-export const wavellHeights: Suburb = {
+export const wooloowin: Suburb = {
     demographic: {
         totalPopulation: 3938,
         male: 1991,
