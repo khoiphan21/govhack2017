@@ -42,14 +42,14 @@ export const wavellHeights: Suburb = {
         ]
     },
     pointOfInterest: {
-        restaurants: 16,
-        cafe: 15,
-        parks: 5,
-        shoppingMalls: 2
+        restaurants: 24,
+        cafe: 11,
+        parks: 10,
+        shoppingMalls: 1
     },
     publicFacilities: {
-        schools: 4,
-        hospitals: 7,
-        busStops: 8
+        schools: 3,
+        hospitals: 4,
+        busStops: 28
     }
 }
