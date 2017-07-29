@@ -21,6 +21,35 @@
     }
 }
 
+.back-button {
+    position: absolute;
+    color: $theme-green;
+    top: 5vh;
+    left: 5vh;
+    z-index: 2;
+    @include row-center();
+    justify-content: space-between;
+    width: 9vw;
+    border: $theme-green solid 1px;
+    border-radius: 5px;
+    padding: 1vh 1vw;
+    cursor: pointer;
+    .triangle-left {
+        width: 3vh;
+        height: 3vh;
+        background-image: url('/assets/buttons/back-green.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &:hover {
+        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+}
+
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background: $transparent-white;
@@ -63,26 +92,6 @@
         .left-mid {
             padding: 2vh 2vw 5vh 2vw;
             line-height: 200%;
-            .back-button {
-                @include row-center();
-                justify-content: space-between;
-                width: 7vw;
-                cursor: pointer;
-                .triangle-left {
-                    width: 3vh;
-                    height: 3vh;
-                    background-image: url('/assets/buttons/back-green.png');
-                    background-position: center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                }
-                &:hover {
-                    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
-                    transform: translate3d(0, 0, 0);
-                    backface-visibility: hidden;
-                    perspective: 1000px;
-                }
-            }
             .marital {
                 font-size: 12pt;
                 margin-top: 7vh;
