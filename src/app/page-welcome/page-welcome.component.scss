@@ -32,6 +32,14 @@
             width: 45%;
             display: flex;
             justify-content: flex-start;
+            div {
+                span {
+                    font-family: 'Roboto', sans-serif;
+                    display: block;
+                    padding-top: 1vh;
+                    color: #FF3400;
+                }
+            }
             input[type=text],
             select {
                 -webkit-animation: fadein 2s;
@@ -114,7 +122,7 @@
                 min-width: 10vw;
                 margin-top: 4vh;
                 display: flex;
-                align-items: center;
+                align-items: baseline;
                 font-size: 12pt;
                 background: rgb(114, 135, 128);
                 /* For browsers that do not support gradients */
@@ -140,6 +148,12 @@
                 }
                 &:hover {
                     border: white solid 2px !important;
+                }
+                span {
+                    text-align: center;
+                    &:first-child {
+                        margin-right: 1vw;
+                    }
                 }
             }
         }
