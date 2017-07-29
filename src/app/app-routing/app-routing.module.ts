@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 import { PageWelcomeComponent } from '../page-welcome/page-welcome.component';
-import { PageDataComponent } from '../page-data/page-data.component';
 import { PageStatsComponent } from '../page-stats/page-stats.component';
 
 const routes: Routes = [
@@ -13,7 +12,6 @@ const routes: Routes = [
     { path: 'stats', component: PageStatsComponent }
   ] 
   },
- { path: 'data', component: PageDataComponent },
 ]
 
 @NgModule({
