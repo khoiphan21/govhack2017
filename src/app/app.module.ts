@@ -10,13 +10,15 @@ import { DataService } from './data.service';
 import { D3Service } from 'd3-ng2-service';
 import { PageStatsComponent } from './page-stats/page-stats.component';
 import { PageMapComponent } from './page-map/page-map.component';
+import { PageStatsP2Component } from './page-stats-p2/page-stats-p2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageWelcomeComponent,
     PageStatsComponent,
-    PageMapComponent
+    PageMapComponent,
+    PageStatsP2Component
   ],
   imports: [
     BrowserModule,

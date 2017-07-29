@@ -51,7 +51,7 @@
             }
         }
         .left-mid {
-            padding: 5vh 2vw 5vh 2vw;
+            padding: 2vh 2vw 5vh 2vw;
             line-height: 200%;
             .back-button {
                 @include row-center();
@@ -127,15 +127,9 @@
                 display: flex;
                 flex-direction: column;
                 .suburb-title {
-                    display: block;
-                    font-size: 36pt;
+                    font-size: 24pt;
                     text-transform: uppercase;
-                    margin-bottom: 3vh;
-                }
-                span.title {
-                    color: white;
-                    font-size: 18pt;
-                    margin: 5vh 0;
+                    margin-bottom: 7vh;
                 }
                 .suburb-dtl {
                     display: flex;
@@ -160,42 +154,13 @@
                         margin-right: 10vw;
                         width: 40vh;
                         height: 40vh;
-                        div.demographic-content {
-                            @include column-center();
-                            position: relative;
-                            top: -100%;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            div {
-                                @include column-center();
-                                width: 70%;
-                                height: 70%;
-                                border-radius: 50%;
-                                border: 2pt solid white;
-                                p {
-                                    color: white;
-                                    margin: 0;
-                                    padding: 0;
-                                    &.population {
-                                        text-transform: uppercase;
-                                    }
-                                    &.value {
-                                        font-size: 3em;
-                                    }
-                                }
-                            }
-                        }
                         #chart-wrapper {
-                            position: relative;
                             width: 100%;
                             height: 100%;
-                            svg {
-                                position: relative;
-                                top: 0;
-                                left: 0;
-                            }
                         }
+                        // border-radius: 500px;
+                        // background: black;
+                        // border: white solid 1px;
                     }
                     .data {
                         margin-left: 13vw;
@@ -220,47 +185,6 @@
                         }
                         div:nth-child(3) {
                             margin-top: 5vh;
-                        }
-                    }
-                }
-                .generational-breakdown {
-                    width: 100%;
-                    padding-right: 20vw;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    .generation {
-                        @include row-center();
-                        justify-content: space-between;
-                        align-items: flex-start;
-                        margin: 1vh 0;
-                        div.title {
-                            color: $theme-green;
-                            width: 20%;
-                            p.title {
-                                text-transform: capitalize;
-                                margin: 0;
-                                font-size: 2em;
-                            }
-                            p.age {
-                                text-transform: lowercase;
-                                margin: 0;
-                                font-size: 1em;
-                            }
-                        }
-                        div.bar {
-                            height: 1.5em;
-                            width: 50%;
-                            border: 1px solid white;
-                            div.bar-fill {
-                                height: 1.5em;
-                                background: red;
-                                border: 1px solid transparent;
-                            }
-                        }
-                        div.value {
-                            color: $theme-green;
-                            font-size: 1.5em;
                         }
                     }
                 }

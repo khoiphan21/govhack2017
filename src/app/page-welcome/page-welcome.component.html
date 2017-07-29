@@ -10,7 +10,7 @@
         <section class="form">
             <form action="">
                 <div>
-                    <input list="browsers" [(ngModel)]="inputText" type="text" name="location" placeholder="Enter an address or location to look at..." (click)="showSuggestion($event)" />
+                    <input list="browsers" [(ngModel)]="inputText" type="text" name="location" placeholder="Enter an address or location to explore..." (click)="showSuggestion($event)" />
                     <span *ngIf="(inputText != address && inputText != '') || isError ">Invalid location. Please choose from the drop-down menu.</span>
                 </div>
                 <p *ngIf="isSuggestionShown" (click)="selectAddress()">{{address}}</p>
