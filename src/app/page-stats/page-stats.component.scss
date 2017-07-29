@@ -420,6 +420,7 @@
     text-transform: uppercase;
 }
 
+// animations for shaking the button
 @keyframes shake {
     10%,
     90% {
@@ -440,6 +441,7 @@
     }
 }
 
+// animations for fading in components
 @keyframes fadein {
     from {
         opacity: 0;
@@ -480,6 +482,15 @@
 /* Opera < 12.1 */
 
 @-o-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes barExpand {
     from {
         opacity: 0;
     }
