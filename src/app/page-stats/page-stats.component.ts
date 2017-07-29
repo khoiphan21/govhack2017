@@ -22,11 +22,25 @@ export class PageStatsComponent implements OnInit {
   ngOnInit() {
     let d3 = this.d3; // for convenience use a block scope variable
 
-    let svg = d3.select('#arc')
+    d3.select('#arc')
       .append('svg')
-      .attr('width', 600)
-      .attr('height', 400)
-      .style('background', '#ffffff')
+        .attr('width', 600)
+        .attr('height', 400)
+        .style('background', '#ffffff')
+      .append('rect')
+        .attr('x', 200)
+        .attr('y', 200)
+        .attr('width', 200)
+        .attr('height', 200)
+        .style('fill', '#cb4b19')
+
+    d3.select('#arc svg')
+      .append('circle')
+      .attr('cx', 300)
+      .attr('cy', 200)
+      .attr('r', 50)
+      .style('fill', '#840043')
+
   }
 
 }

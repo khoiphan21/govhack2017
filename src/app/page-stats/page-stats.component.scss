@@ -53,7 +53,7 @@
             }
             .poi {
                 font-size: 12pt;
-                margin-top: 2vh;
+                margin-top: 7vh;
                 .poi-dtl {
                     display: grid;
                     grid-template-columns: 20vw 20vw 20vw 20vw;
@@ -120,13 +120,14 @@
                     }
                     .data {
                         margin-left: 13vw;
-                        @include column-center();
+                        align-self: center;
                         line-height: 100%;
                         align-items: flex-start;
                         div {
                             @include column-center();
                             align-items: flex-start;
                             span:nth-child(1) {
+                                margin: 0;
                                 font-size: 10pt;
                                 text-transform: uppercase;
                             }
@@ -136,6 +137,9 @@
                             }
                         }
                         div:nth-child(2) {
+                            margin-top: 5vh;
+                        }
+                        div:nth-child(3) {
                             margin-top: 5vh;
                         }
                     }
