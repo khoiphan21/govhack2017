@@ -18,9 +18,9 @@ export class PageLoadingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   this.router.navigate(['welcome']);
-    // }, 3000)
+    setTimeout(() => {
+      this.router.navigate(['welcome']);
+    }, 3000)
   }
 
 }
