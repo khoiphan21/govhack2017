@@ -28,6 +28,7 @@
     .mid-container {
         width: 100%;
         .form {
+            position: relative;
             width: 45%;
             display: flex;
             justify-content: flex-start;
@@ -64,6 +65,28 @@
                 /* Firefox 4 - 18 */
                 color: $font-grey;
                 opacity: 1;
+            }
+            p {
+                @include transition-basic();
+                position: absolute;
+                top: 13vh;
+                box-sizing: border-box;
+                color: $font-grey;
+                padding: 0 1vw;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                font-size: 14pt;
+                height: 6vh;
+                width: 40vw;
+                border: none;
+                background: white;
+                margin: 0;
+                &:hover {
+                    cursor: pointer;
+                    color: white;
+                    background: $font-grey;
+                }
             }
             button[type=submit],
             select {
