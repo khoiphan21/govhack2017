@@ -9,11 +9,13 @@
         </section>
         <section class="form">
             <form action="">
-                <input list="browsers" [(ngModel)]="inputText" type="text" name="location" placeholder="Enter an address or location to look at..." (click)="showSuggestion($event)" />
+                <div>
+                    <input list="browsers" [(ngModel)]="inputText" type="text" name="location" placeholder="Enter an address or location to look at..." (click)="showSuggestion($event)" />
+                    <span *ngIf="(inputText != address && inputText != '') || isError ">Invalid location. Please choose from the drop-down menu.</span>
+                </div>
                 <p *ngIf="isSuggestionShown" (click)="selectAddress()">{{address}}</p>
-                <button type="submit" name="submit" routerLink="stats">
-                    <span>Continue</span>
-                    <span>&#9655;</span>
+                <button type="submit" name="submit" (click)="toStatsPage()">
+                    <span>Continue</span><span>&#9655;</span>
                 </button>
             </form>
         </section>

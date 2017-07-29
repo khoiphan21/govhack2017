@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-welcome',
@@ -9,8 +10,11 @@ export class PageWelcomeComponent implements OnInit {
   isSuggestionShown: boolean = false;
   inputText: string = '';
   address: string = '1/1207 Sandgate Rd, Nundah QLD 4102';
-
-  constructor() { }
+  isError: boolean = false;
+  
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
@@ -25,6 +29,16 @@ export class PageWelcomeComponent implements OnInit {
   }
   selectAddress() {
     this.inputText = this.address;
+    this.isError = false;
+  }
+
+  toStatsPage() {
+    if (this.inputText == this.address) {
+      this.router.navigate(['welcome/stats'])
+    } else {
+      this.isError = true;
+      this.hideSuggestion();
+    }
   }
 
 }
