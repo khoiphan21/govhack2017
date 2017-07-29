@@ -14,5 +14,8 @@ export const NUNDAH: Suburb = {
             babyBoomers: 2202,
             traditionalists: 821
         }
+    },
+    crime: {
+        offences: 73
     }
 }
