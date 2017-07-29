@@ -21,33 +21,61 @@ export class PageStatsComponent implements OnInit {
 
   ngOnInit() {
     let d3 = this.d3; // for convenience use a block scope variable
-    let demographicdata = [45, 55];
-    let height = 400,
-      width = 600,
+
+    // let pieGenerator = d3.pie()
+    //   .startAngle(-0.5 * Math.PI)
+    //   .endAngle(0.5 * Math.PI);
+
+
+    // let arcData = pieGenerator(data);
+
+    // // Create a path element and set its d attribute
+    // d3.select('#demographic-chart').append('svg')
+    //   .selectAll('path')
+    //   .data(arcData)
+    //   .enter()
+    //   .append('path')
+    //   .attr('d', <any>arcGenerator);
+
+    // Draw the pie
+    let height,
+      width,
       barWidth = 50,
-      barOffset = 5;
+      barOffset = 5,
+      radius;
+    
+    let parentElement = document.getElementById('chart-wrapper');
+    height = parentElement.getBoundingClientRect().height;
+    width = parentElement.getBoundingClientRect().width;
+    radius = Math.min(height, width) / 2;
 
+    let pie = d3.pie()
+      .value((d: number) => {return d;})
+      .sort(null);
 
-    let pieGenerator = d3.pie()
-      .startAngle(-0.5 * Math.PI)
-      .endAngle(0.5 * Math.PI);
-
-    let data = [10, 40, 30, 20, 60, 80];
+    let color = ["red", "blue"]
+    let demographicdata = [45, 55];
 
     // Create an arc generator with configuration
-    let arcGenerator = d3.arc()
-      .innerRadius(20)
-      .outerRadius(100);
+    let arc = d3.arc()
+      .innerRadius(radius * 0.95)
+      .outerRadius(radius);
 
-    let arcData = pieGenerator(data);
+    let svg = d3.select("#demographic-chart div").append('svg')
+      .attr("width", width)
+      .attr("height", height)
+    .append('g')
+      .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
-    // Create a path element and set its d attribute
-    d3.select('#arc').append('svg')
-      .selectAll('path')
-      .data(arcData)
-      .enter()
-      .append('path')
-      .attr('d', <any>arcGenerator);
+    let path = svg.selectAll('path')
+      .data(pie(demographicdata))
+      .enter().append('path')
+      .attr('d', <any> arc)
+      .attr('fill', (d, i) => {
+        return color[i];
+      })
+
+
   }
 
 }
