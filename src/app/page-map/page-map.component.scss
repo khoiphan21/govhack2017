@@ -1,0 +1,85 @@
+    @import '../sass/variables';
+    @import '../sass/mixins';
+    @import '../sass/globalStyles';
+    .main-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+        overflow: hidden;
+        /* For browsers that do not support gradients */
+        background: -webkit-linear-gradient(top, $theme-maroon, $theme-dark-maroon);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(bottom, $theme-maroon, $theme-dark-maroon);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(bottom, $theme-maroon, $theme-dark-maroon);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(to bottom, $theme-maroon, $theme-dark-maroon);
+        /* Standard syntax */
+        color: $theme-green;
+        line-height: 150%;
+        display: flex;
+        #left-container {
+            width: 75vw;
+            height: 100vh;
+        }
+        .right-container {
+            width: 25vw;
+            height: 100vh;
+            padding: 0 1vw;
+            .right-top {
+                height: 17%;
+                display: flex;
+                align-items: center;
+                img {
+                    height: 10vh;
+                }
+            }
+            .right-mid {
+                .selection {
+                    color: $font-grey;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                    height: 7vh;
+                    background: rgba(255, 255, 255, 0.7);
+                    border: transparent solid 2px;
+                    margin-top: 2vh;
+                    .selection-left {
+                        font-size: 16pt;
+                        @include row-center();
+                        width: 15%;
+                        height: 100%;
+                        background: white;
+                    }
+                    .selection-right {
+                        font-size: 14pt;
+                        @include row-center();
+                        justify-content: space-between;
+                        width: 85%;
+                        height: 100%;
+                        padding: 0 1vw;
+                        span:nth-child(2) {
+                            color: $font-blue-green;
+                            font-weight: bold;
+                        }
+                    }
+                    &:hover {
+                        border: $font-yellow solid 2px;
+                    }
+                }
+                .definition {
+                    font-size: 10pt;
+                    margin-top: 2vh;
+                    float: right;
+                }
+            }
+        }
+    }
+    
+    .title {
+        font-size: 12pt;
+        text-transform: uppercase;
+    }

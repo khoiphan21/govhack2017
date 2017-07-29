@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DataService } from './data.service';
 import { D3Service } from 'd3-ng2-service';
 import { PageStatsComponent } from './page-stats/page-stats.component';
+import { PageMapComponent } from './page-map/page-map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageWelcomeComponent,
-    PageStatsComponent
+    PageStatsComponent,
+    PageMapComponent
   ],
   imports: [
     BrowserModule,
