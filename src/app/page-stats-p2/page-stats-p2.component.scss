@@ -40,16 +40,6 @@
         width: 90vw;
         height: 100%;
         overflow-y: scroll;
-        .left-top {
-            height: 20%;
-            display: flex;
-            align-items: flex-end;
-            padding: 0 2vw;
-            img {
-                cursor: pointer;
-                height: 10vh;
-            }
-        }
         .left-mid {
             padding: 2vh 2vw 5vh 2vw;
             line-height: 200%;
@@ -73,94 +63,40 @@
                     perspective: 1000px;
                 }
             }
-            .location {
-                margin-top: 5vh;
-                @include column-center();
-                align-items: flex-start;
-                .address {
-                    font-size: 24pt;
-                }
-                .location-dtl {
-                    font-size: 8pt;
-                    @include row-center();
-                    justify-content: space-between;
-                    width: 8vw; // span:nth-child(1) {}
-                    span:nth-child(2) {
-                        text-decoration: underline;
-                        color: $font-yellow;
-                    }
-                }
-            }
-            .poi {
+            .marital {
                 font-size: 12pt;
                 margin-top: 7vh;
-                .poi-dtl {
+                .marital-dtl {
                     display: grid;
                     grid-template-columns: 20vw 20vw 20vw 20vw;
                     grid-row-gap: 10vh;
                     margin-top: 2vh;
-                    .poi-dtl-data {
+                    .marital-dtl-data {
                         width: 17vw;
-                        @include row-center();
-                        justify-content: flex-start;
                         img {
-                            height: 15vh;
-                        }
-                        article {
-                            @include column-center();
-                            align-items: flex-start;
-                            line-height: 150%;
-                            margin-left: 1vw;
-                            span:nth-child(1) {
-                                font-size: 16pt;
-                            }
-                            span:nth-child(2) {
-                                font-size: 10pt;
-                                text-transform: uppercase;
-                            }
+                            height: 30vh;
                         }
                     }
                 }
             }
-            .suburb {
+            .crime {
                 margin-top: 10vh;
                 display: flex;
                 flex-direction: column;
-                .suburb-title {
+                .crime-title {
                     font-size: 24pt;
                     text-transform: uppercase;
                     margin-bottom: 7vh;
                 }
-                .suburb-dtl {
+                .crime-dtl {
                     display: flex;
+                    justify-content: center;
+                    align-items: center;
                     margin-top: 5vh;
-                    .person {
-                        @include column-center();
-                        line-height: 150%;
+                    .graph {
                         img {
-                            height: 25vh;
+                            height: 45vh;
                         }
-                        span:nth-child(2) {
-                            font-size: 16pt;
-                            margin-top: 2vh;
-                        }
-                        span:nth-child(3) {
-                            font-size: 10pt;
-                            text-transform: uppercase;
-                        }
-                    }
-                    #demographic-chart {
-                        margin-left: 10vw;
-                        margin-right: 10vw;
-                        width: 40vh;
-                        height: 40vh;
-                        #chart-wrapper {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        // border-radius: 500px;
-                        // background: black;
-                        // border: white solid 1px;
                     }
                     .data {
                         margin-left: 13vw;
@@ -178,13 +114,31 @@
                             span:nth-child(2) {
                                 font-size: 16pt;
                                 margin-top: 2vh;
+                                margin-bottom: 5vh;
+                            }
+                            ol {
+                                line-height: 150%;
+                                padding-top: 0;
+                                padding-left: 1.5vw;
+                                margin-top: 0;
+                                font-size: 16pt;
                             }
                         }
-                        div:nth-child(2) {
-                            margin-top: 5vh;
-                        }
-                        div:nth-child(3) {
-                            margin-top: 5vh;
+                    }
+                }
+            }
+            .marketplace {
+                font-size: 12pt;
+                margin-top: 7vh;
+                .marketplace-dtl {
+                    display: grid;
+                    grid-template-columns: 20vw 20vw 20vw 20vw;
+                    grid-row-gap: 10vh;
+                    margin-top: 2vh;
+                    .marketplace-dtl-data {
+                        width: 17vw;
+                        img {
+                            height: 30vh;
                         }
                     }
                 }

@@ -61,6 +61,7 @@
             }
             .right-mid {
                 .selection {
+                    cursor: pointer;
                     color: $font-grey;
                     display: flex;
                     align-items: center;
@@ -93,9 +94,14 @@
                     }
                 }
                 .definition {
+                    @include transition-basic();
                     font-size: 10pt;
                     margin-top: 2vh;
                     float: right;
+                    cursor: pointer;
+                    &:hover {
+                        color: darken($theme-green, 15);
+                    }
                 }
             }
         }
