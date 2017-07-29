@@ -133,7 +133,7 @@
                     <p class="title">Millennials</p>
                     <p class="age">(age 20 - 39)</p>
                 </div>
-                <div class="bar"><span class="bar-fill" [style.width]="millenials" > </span></div>
+                <div class="bar"><div class="bar-fill" [style.width]="millenials" > </div></div>
                 <div class="value">{{demographicData.ageRange.millenials}}</div>
             </div>
             <div class="generation">
@@ -141,7 +141,7 @@
                     <p class="title">Gen X</p>
                     <p class="age">(age 40 - 49)</p>
                 </div>
-                <div class="bar"><span class="bar-fill"> </span></div>
+                <div class="bar"><div class="bar-fill" [style.width]="genX"></div></div>
                 <div class="value">{{demographicData.ageRange.genX}}</div>
             </div>
             <div class="generation">
@@ -149,7 +149,7 @@
                     <p class="title">Baby Boomers</p>
                     <p class="age">(age 50 - 69)</p>
                 </div>
-                <div class="bar"><span class="bar-fill"> </span></div>
+                <div class="bar"><div class="bar-fill" [style.width]="babyBoomers"> </div></div>
                 <div class="value">{{demographicData.ageRange.babyBoomers}}</div>
             </div>
             <div class="generation">
@@ -157,7 +157,7 @@
                     <p class="title">Traditionalists</p>
                     <p class="age">(age 70+)</p>
                 </div>
-                <div class="bar"><span class="bar-fill"></span></div>
+                <div class="bar"><div class="bar-fill" [style.width]="traditionalists"></div></div>
                 <div class="value">{{demographicData.ageRange.traditionalists}}</div>
             </div>
         </section>
