@@ -9,23 +9,23 @@
     height: 100vh;
     box-sizing: border-box;
     overflow: hidden;
-    background: white;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, $theme-maroon, $theme-dark-maroon);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, $theme-maroon, $theme-dark-maroon);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, $theme-maroon, $theme-dark-maroon);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, $theme-maroon, $theme-dark-maroon);
+    /* Standard syntax */
     color: $theme-green;
     line-height: 150%;
+    display: flex;
     .left-container {
         width: 90vw;
         height: 100%;
         background: $theme-maroon;
         overflow-y: scroll;
-        /* For browsers that do not support gradients */
-        background: -webkit-linear-gradient(left, $theme-maroon, $theme-dark-maroon);
-        /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(right, $theme-maroon, $theme-dark-maroon);
-        /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(right, $theme-maroon, $theme-dark-maroon);
-        /* For Firefox 3.6 to 15 */
-        background: linear-gradient(to right, $theme-maroon, $theme-dark-maroon);
-        /* Standard syntax */
         .left-top {
             height: 20%;
             display: flex;
@@ -142,6 +142,18 @@
                     }
                 }
             }
+        }
+    }
+    .right-container {
+        width: 10vw;
+        color: $font-blue-green;
+        background: rgba(255, 255, 255, 0.7);
+        .explore {
+            line-height: 130%;
+            width: 10vw;
+            @include column-center();
+            position: absolute;
+            top: 100;
         }
     }
 }
