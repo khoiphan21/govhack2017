@@ -63,13 +63,16 @@
                 color: $font-grey;
                 opacity: 1;
             }
-            input[type=submit],
+            button[type=submit],
             select {
                 border: none;
                 color: white;
                 text-transform: uppercase;
                 float: right;
                 padding: 1vh 1vw;
+                display: flex;
+                justify-content: space-between;
+                min-width: 9vw;
                 margin-top: 4vh;
                 display: flex;
                 align-items: center;

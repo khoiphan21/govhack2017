@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { PageWelcomeComponent } from './page-welcome/page-welcome.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DataService } from './data.service';
+import { PageDataComponent } from './page-data/page-data.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageWelcomeComponent
+    PageWelcomeComponent,
+    PageDataComponent
   ],
   imports: [
     BrowserModule,
