@@ -14,6 +14,7 @@ export class PageStatsComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';
   private d3: D3;
+  private data = [1200, 1525, 1167, 1824, 245];
 
   constructor(d3Service: D3Service) { // passing d3 service into the consturctor
     this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 service
