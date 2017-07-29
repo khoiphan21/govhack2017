@@ -5,16 +5,16 @@ export const NUNDAH: Suburb = {
         totalPopulation: 12141,
         male: 6006,
         female: 6133,
-        averageDisposableIncome: 334, // Weekly
-        familyHouseholds: 2956,
+        averageDisposableIncome: 334, // (weekly income * 2 - mortgage) /4
+        familyHouseholds: 2956, // search for 'Family households'
         ageRange: {
-            genZ: 2005,
-            millenials: 5539,
-            genX: 1576,
-            babyBoomers: 2202,
-            traditionalists: 821
+            genZ: 2005, // 0-19
+            millenials: 5539, // 20-39
+            genX: 1576, // 40-49
+            babyBoomers: 2202, // 50-69
+            traditionalists: 821 // 70+
         },
-        countryOfBirth: [
+        countryOfBirth: [ // Search for 'country of birth'
             {
                 country: 'Australia',
                 amount: 7637
@@ -40,8 +40,5 @@ export const NUNDAH: Suburb = {
                 amount: 154
             },
         ]
-    },
-    crime: {
-        offences: 73
     }
 }
