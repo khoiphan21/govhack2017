@@ -1,6 +1,21 @@
 @import '../sass/variables';
 @import '../sass/mixins';
 @import '../sass/globalStyles';
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: $transparent-white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: $transparent-white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $font-blue-green;
+    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+}
+
 .main-container {
     position: absolute;
     top: 0;
@@ -28,19 +43,38 @@
         .left-top {
             height: 20%;
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             padding: 0 2vw;
             img {
+                cursor: pointer;
                 height: 10vh;
             }
         }
         .left-mid {
-            padding: 5vh 2vw;
+            padding: 2vh 2vw 5vh 2vw;
             line-height: 200%;
             .back-button {
-                #triangle-left {}
+                @include row-center();
+                justify-content: space-between;
+                width: 7vw;
+                cursor: pointer;
+                .triangle-left {
+                    width: 3vh;
+                    height: 3vh;
+                    background-image: url('/assets/buttons/back-green.png');
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+                &:hover {
+                    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+                    transform: translate3d(0, 0, 0);
+                    backface-visibility: hidden;
+                    perspective: 1000px;
+                }
             }
             .location {
+                margin-top: 5vh;
                 @include column-center();
                 align-items: flex-start;
                 .address {
@@ -187,4 +221,24 @@
 .title {
     font-size: 12pt;
     text-transform: uppercase;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
