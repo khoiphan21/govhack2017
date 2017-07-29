@@ -120,65 +120,70 @@
         </section>
         <span class="title">generational breakdown</span>
         <section class="generational-breakdown">
-            <div class="generation">
-                <div class="title">
-                    <p class="title">Gen Z</p>
-                    <p class="age">(age 0 - 19)</p>
-                </div>
-                <div class="bar"><div class="bar-fill" [style.width]="genZ"></div></div>
-                <div class="value">{{demographicData.ageRange.genZ}}</div>
+          <div class="generation">
+            <div class="title">
+              <p class="title">Gen Z</p>
+              <p class="age">(age 0 - 19)</p>
             </div>
-            <div class="generation">
-                <div class="title">
-                    <p class="title">Millennials</p>
-                    <p class="age">(age 20 - 39)</p>
-                </div>
-                <div class="bar"><div class="bar-fill" [style.width]="millenials" > </div></div>
-                <div class="value">{{demographicData.ageRange.millenials}}</div>
+            <div class="bar">
+              <div class="bar-fill" [style.width]="genZ"></div>
             </div>
-            <div class="generation">
-                <div class="title">
-                    <p class="title">Gen X</p>
-                    <p class="age">(age 40 - 49)</p>
-                </div>
-                <div class="bar"><div class="bar-fill" [style.width]="genX"></div></div>
-                <div class="value">{{demographicData.ageRange.genX}}</div>
+            <div class="value">{{demographicData.ageRange.genZ}}</div>
+          </div>
+          <div class="generation">
+            <div class="title">
+              <p class="title">Millennials</p>
+              <p class="age">(age 20 - 39)</p>
             </div>
-            <div class="generation">
-                <div class="title">
-                    <p class="title">Baby Boomers</p>
-                    <p class="age">(age 50 - 69)</p>
-                </div>
-                <div class="bar"><div class="bar-fill" [style.width]="babyBoomers"> </div></div>
-                <div class="value">{{demographicData.ageRange.babyBoomers}}</div>
+            <div class="bar">
+              <div class="bar-fill" [style.width]="millenials"> </div>
             </div>
-            <div class="generation">
-                <div class="title">
-                    <p class="title">Traditionalists</p>
-                    <p class="age">(age 70+)</p>
-                </div>
-                <div class="bar"><div class="bar-fill" [style.width]="traditionalists"></div></div>
-                <div class="value">{{demographicData.ageRange.traditionalists}}</div>
+            <div class="value">{{demographicData.ageRange.millenials}}</div>
+          </div>
+          <div class="generation">
+            <div class="title">
+              <p class="title">Gen X</p>
+              <p class="age">(age 40 - 49)</p>
             </div>
+            <div class="bar">
+              <div class="bar-fill" [style.width]="genX"></div>
+            </div>
+            <div class="value">{{demographicData.ageRange.genX}}</div>
+          </div>
+          <div class="generation">
+            <div class="title">
+              <p class="title">Baby Boomers</p>
+              <p class="age">(age 50 - 69)</p>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" [style.width]="babyBoomers"> </div>
+            </div>
+            <div class="value">{{demographicData.ageRange.babyBoomers}}</div>
+          </div>
+          <div class="generation">
+            <div class="title">
+              <p class="title">Traditionalists</p>
+              <p class="age">(age 70+)</p>
+            </div>
+            <div class="bar">
+              <div class="bar-fill" [style.width]="traditionalists"></div>
+            </div>
+            <div class="value">{{demographicData.ageRange.traditionalists}}</div>
+          </div>
         </section>
         <span class="title">major ethnicities</span>
         <section class="ethnicities">
-            <div class="bar">
-                <div class="bar-segment" *ngFor="let ethnicityValue of ethnicityValues; let index = index" 
-                    [style.width]="ethnicityValue" 
-                    [style.background]="ethnicBarColors[index]"
-                    [style.display]="index < 5 ? 'block' : 'none'"
-                ></div>
+          <div class="bar">
+            <div class="bar-segment" *ngFor="let ethnicityValue of ethnicityValues; let index = index" [style.width]="ethnicityValue"
+              [style.background]="ethnicBarColors[index]" [style.display]="index < 5 ? 'block' : 'none'"></div>
+          </div>
+          <div class="legend">
+            <div class="legend-item" *ngFor="let country of ethnicities; let i = index" [style.display]="i < 5 ? 'flex' : 'none'">
+              <p>{{country}}</p>
+              <div class="item-color" [style.background]="ethnicBarColors[i]">
+              </div>
             </div>
-            <div class="legend">
-                <div class="legend-item" *ngFor="let country of ethnicities; let i = index"
-                    [style.display]="i < 5 ? 'flex' : 'none'">
-                    <p>{{country}}</p>
-                    <div class="item-color" 
-                        [style.background]="ethnicBarColors[i]">
-                    </div>
-                </div>
-            </div>
+          </div>
         </section>
       </section>
     </section>
