@@ -32,10 +32,31 @@
             .right-top {
                 height: 17%;
                 display: flex;
+                justify-content: space-between;
                 align-items: center;
                 img {
                     height: 10vh;
                     cursor: pointer;
+                }
+                .back-button {
+                    @include row-center();
+                    justify-content: space-between;
+                    width: 6vw;
+                    cursor: pointer;
+                    .triangle-left {
+                        width: 3vh;
+                        height: 3vh;
+                        background-image: url('/assets/buttons/back-green.png');
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                    }
+                    &:hover {
+                        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+                        transform: translate3d(0, 0, 0);
+                        backface-visibility: hidden;
+                        perspective: 1000px;
+                    }
                 }
             }
             .right-mid {
@@ -83,4 +104,24 @@
     .title {
         font-size: 12pt;
         text-transform: uppercase;
+    }
+    
+    @keyframes shake {
+        10%,
+        90% {
+            transform: translate3d(-1px, 0, 0);
+        }
+        20%,
+        80% {
+            transform: translate3d(2px, 0, 0);
+        }
+        30%,
+        50%,
+        70% {
+            transform: translate3d(-4px, 0, 0);
+        }
+        40%,
+        60% {
+            transform: translate3d(4px, 0, 0);
+        }
     }
