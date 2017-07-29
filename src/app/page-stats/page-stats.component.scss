@@ -269,6 +269,56 @@
                         }
                     }
                 }
+                .ethnicities {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    width: 100%;
+                    min-height: 7vh;
+                    div.bar {
+                        display: flex;
+                        flex-direction: row;
+                        height: 7vh;
+                        width: 100%;
+                        div.bar-segment {
+                            height: 7vh;
+                            margin-right: 0.5vw;
+                            $bar-border-radius: 5px;
+                            &:first-of-type{
+                                border-radius: $bar-border-radius 0 0 $bar-border-radius;
+                            }
+                            &:nth-of-type(5) {
+                                border-radius: 0 $bar-border-radius $bar-border-radius 0;
+                            } 
+                        }
+                    }
+                    div.legend {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        margin-top: 5vh;
+                        div.legend-item {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            width: 40%;
+                            padding: 2vh 0;
+                            p {
+                                margin: 0;
+                                font-size: 24pt;
+                                margin-right: 5vw;
+                            }
+                            div.item-color {
+                                height: 24pt;
+                                width: 30pt;
+                                border-radius: 10px;
+                                margin-right: 10vw;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

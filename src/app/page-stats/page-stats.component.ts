@@ -1,9 +1,14 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { slideInDownAnimation } from '../animations';
+
+import * as _ from 'underscore';
+
 // import the D3 service, the type alias for the d3 varialbe and selection interface
 import { D3Service, D3, Selection } from 'd3-ng2-service';
 import { Demographic } from '../classes/demographic';
 import { DataService } from '../data.service';
+import { CountryOfBirth } from '../classes/countryOfBirth';
+
 
 @Component({
   selector: 'app-page-stats',
@@ -25,10 +30,21 @@ export class PageStatsComponent implements OnInit {
   babyBoomers: string;
   traditionalists: string;
 
+  // Variables for ethnicities
+  ethnicities: string[] = []; // Country names
+  ethnicityValues: string[] = []; // go straight to style.width for the bar
+  ethnicBarColors: string[] = [
+    '#728780', 
+    '#95D6BE',
+    '#F3AB70',
+    '#C2CFBD',
+    '#CE3E77',
+  ]; // index must match the index of the countries
+
   constructor(
     private d3Service: D3Service,
     private dataService: DataService
-  ) { // passing d3 service into the consturctor
+  ) { // passing d3 service into the constructor
   }
 
   ngOnInit() {
@@ -50,6 +66,22 @@ export class PageStatsComponent implements OnInit {
     this.genX = `${ageRange.genX / maxAgeRange * 100}%`;
     this.babyBoomers = `${ageRange.babyBoomers / maxAgeRange * 100}%`;
     this.traditionalists = `${ageRange.traditionalists / maxAgeRange * 100}%`;
+
+    // SETUP THE ETHNICITIES DATA
+    let countriesOfBirth: number[] = [];
+    let maxPeople: number = 0;
+    _.each(this.demographicData.countryOfBirth, (country: CountryOfBirth) => {
+      countriesOfBirth.push(country.amount);
+      this.ethnicities.push(country.country);
+      // Get the max number of people
+      if (country.amount > maxPeople) {
+        maxPeople = country.amount;
+      }
+    })
+    // Now calculate the length of the bar
+    _.each(countriesOfBirth, value => {
+      this.ethnicityValues.push(`${value / maxPeople * 100}%`)
+    })
 
     // DRAW THE DONUT CHART
     let d3 = this.d3; // for convenience use a block scope variable

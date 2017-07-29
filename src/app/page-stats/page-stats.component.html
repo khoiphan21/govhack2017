@@ -161,6 +161,25 @@
                 <div class="value">{{demographicData.ageRange.traditionalists}}</div>
             </div>
         </section>
+        <span class="title">major ethnicities</span>
+        <section class="ethnicities">
+            <div class="bar">
+                <div class="bar-segment" *ngFor="let ethnicityValue of ethnicityValues; let index = index" 
+                    [style.width]="ethnicityValue" 
+                    [style.background]="ethnicBarColors[index]"
+                    [style.display]="index < 5 ? 'block' : 'none'"
+                ></div>
+            </div>
+            <div class="legend">
+                <div class="legend-item" *ngFor="let country of ethnicities; let i = index"
+                    [style.display]="i < 5 ? 'flex' : 'none'">
+                    <p>{{country}}</p>
+                    <div class="item-color" 
+                        [style.background]="ethnicBarColors[i]">
+                    </div>
+                </div>
+            </div>
+        </section>
       </section>
     </section>
   </section>
