@@ -37,6 +37,11 @@ export class PageStatsComponent implements OnInit {
   genX: string;
   babyBoomers: string;
   traditionalists: string;
+  malePercentage: number;
+  femalePercentage: number;
+  totalPopulation: number;
+  averageDisposableIncome: number;
+  familyHouseholds: number;
 
   // Variables for ethnicities
   ethnicities: string[] = []; // Country names
@@ -75,6 +80,12 @@ export class PageStatsComponent implements OnInit {
     this.genX = `${ageRange.genX / maxAgeRange * 100}%`;
     this.babyBoomers = `${ageRange.babyBoomers / maxAgeRange * 100}%`;
     this.traditionalists = `${ageRange.traditionalists / maxAgeRange * 100}%`;
+    // General stuff
+    this.malePercentage = Math.round(this.demographicData.male / this.demographicData.totalPopulation * 100);
+    this.femalePercentage = Math.round(this.demographicData.female / this.demographicData.totalPopulation * 100);
+    this.totalPopulation = this.demographicData.totalPopulation;
+    this.averageDisposableIncome = this.demographicData.averageDisposableIncome;
+    this.familyHouseholds = this.demographicData.familyHouseholds;
 
     // SETUP THE ETHNICITIES DATA
     let countriesOfBirth: number[] = [];
@@ -110,7 +121,9 @@ export class PageStatsComponent implements OnInit {
       .sort(null);
 
     let color = ["#C3A485", "#067376"];
-    let demographicdata = [55, 45];
+    let demographicdata = [
+      this.demographicData.male, this.demographicData.female
+    ];
 
     // Create an arc generator with configuration
     let arc = d3.arc()
