@@ -8,6 +8,8 @@ import { D3Service, D3, Selection } from 'd3-ng2-service';
 import { Demographic } from '../classes/demographic';
 import { DataService } from '../data.service';
 import { CountryOfBirth } from '../classes/countryOfBirth';
+import { PointOfInterest } from '../classes/pointOfInterest';
+import { PublicFacilities } from '../classes/publicFacilities';
 
 
 @Component({
@@ -21,6 +23,12 @@ export class PageStatsComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';
   private d3: D3;
+
+  // Variables for the points of interests
+  pointOfInterest: PointOfInterest;
+
+  // Variables for public facilities
+  publicFacilities: PublicFacilities;
   
   // Variables for the demographic data
   demographicData: Demographic;
@@ -50,7 +58,8 @@ export class PageStatsComponent implements OnInit {
   ngOnInit() {
     this.d3 = this.d3Service.getD3(); // <-- obtain the d3 object from the D3 service
     this.demographicData = this.dataService.getDemographicData('NUNDAH');
-    this.demographicData.ageRange.genZ
+    this.pointOfInterest = this.dataService.getPOI('NUNDAH');
+    this.publicFacilities = this.dataService.getPublicFacilities('NUNDAH');
 
     // SETUP THE DEMOGRAPHIC DATA
     let maxAgeRange = Math.max(
