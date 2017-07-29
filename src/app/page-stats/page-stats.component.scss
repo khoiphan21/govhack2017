@@ -58,13 +58,9 @@
                 justify-content: space-between;
                 width: 7vw;
                 cursor: pointer;
-                .triangle-left {
+                img {
                     width: 3vh;
                     height: 3vh;
-                    background-image: url('/assets/buttons/back-green.png');
-                    background-position: center;
-                    background-size: cover;
-                    background-repeat: no-repeat;
                 }
                 &:hover {
                     animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
