@@ -1,0 +1,94 @@
+@import '../sass/variables';
+@import '../sass/mixins';
+@import '../sass/globalStyles';
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('/assets/images/bistro-bg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 5vw;
+    .top-container {
+        width: 100%;
+        height: 25%;
+        display: flex;
+        align-items: center;
+        img {
+            height: 13vh;
+        }
+    }
+    .mid-container {
+        width: 100%;
+        height: 75%;
+        .form {
+            width: 45%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            input[type=text],
+            select {
+                box-sizing: border-box;
+                color: $font-grey;
+                padding: 0 1vw;
+                display: flex;
+                align-items: center;
+                text-align: left;
+                font-size: 18pt;
+                height: 8vh;
+                width: 40vw;
+                border: none;
+                border-bottom: $theme-light-green solid 2px;
+                background: $transparent-white;
+                margin-top: 5vh;
+            }
+             ::-webkit-input-placeholder {
+                /* Chrome */
+                color: $font-grey;
+            }
+             :-ms-input-placeholder {
+                /* IE 10+ */
+                color: $font-grey;
+            }
+             ::-moz-placeholder {
+                /* Firefox 19+ */
+                color: $font-grey;
+                opacity: 1;
+            }
+             :-moz-placeholder {
+                /* Firefox 4 - 18 */
+                color: $font-grey;
+                opacity: 1;
+            }
+            input[type=submit],
+            select {
+                border: none;
+                color: white;
+                text-transform: uppercase;
+                float: right;
+                padding: 1vh 1vw;
+                margin-top: 4vh;
+                display: flex;
+                align-items: center;
+                background: rgb(114, 135, 128);
+                /* For browsers that do not support gradients */
+                background: -webkit-linear-gradient(left, darken(rgb(114, 135, 128), 10), #3f8a6c);
+                /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(right, darken(rgb(114, 135, 128), 10), #3f8a6c);
+                /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(right, darken(rgb(114, 135, 128), 10), #3f8a6c);
+                /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to right, darken(rgb(114, 135, 128), 10), #3f8a6c);
+                /* Standard syntax */
+            }
+        }
+    }
+}
+
+h1 {
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-size: 46pt;
+}
