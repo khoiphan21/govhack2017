@@ -35,13 +35,9 @@
             input[type=text],
             select {
                 -webkit-animation: fadein 2s;
-                /* Safari, Chrome and Opera > 12.1 */
                 -moz-animation: fadein 2s;
-                /* Firefox < 16 */
                 -ms-animation: fadein 2s;
-                /* Internet Explorer */
                 -o-animation: fadein 2s;
-                /* Opera < 12.1 */
                 animation: fadein 2s;
                 box-sizing: border-box;
                 color: $font-grey;
@@ -99,15 +95,12 @@
             }
             button[type=submit],
             select {
+                cursor: pointer;
                 @include transition-basic();
                 -webkit-animation: fadein 2s;
-                /* Safari, Chrome and Opera > 12.1 */
                 -moz-animation: fadein 2s;
-                /* Firefox < 16 */
                 -ms-animation: fadein 2s;
-                /* Internet Explorer */
                 -o-animation: fadein 2s;
-                /* Opera < 12.1 */
                 animation: fadein 2s;
                 border: transparent solid 2px !important;
                 border-radius: 2px;
@@ -159,11 +152,8 @@ h1:nth-child(1) {
     margin-bottom: 2vh;
     font-size: 46pt;
     -webkit-animation: fadein 2s;
-    /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s;
-    /* Firefox < 16 */
     -ms-animation: fadein 2s;
-    /* Internet Explorer */
     -o-animation: fadein 2s;
     /* Opera < 12.1 */
     animation: fadein 2s;
@@ -175,11 +165,8 @@ h1:nth-child(2) {
     margin-bottom: 2vh;
     font-size: 46pt;
     -webkit-animation: fadein 2s;
-    /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 2s;
-    /* Firefox < 16 */
     -ms-animation: fadein 2s;
-    /* Internet Explorer */
     -o-animation: fadein 2s;
     /* Opera < 12.1 */
     animation: fadein 2s;
@@ -194,9 +181,6 @@ h1:nth-child(2) {
     }
 }
 
-
-/* Firefox < 16 */
-
 @-moz-keyframes fadein {
     from {
         opacity: 0;
@@ -206,9 +190,6 @@ h1:nth-child(2) {
     }
 }
 
-
-/* Safari, Chrome and Opera > 12.1 */
-
 @-webkit-keyframes fadein {
     from {
         opacity: 0;
@@ -217,9 +198,6 @@ h1:nth-child(2) {
         opacity: 1;
     }
 }
-
-
-/* Internet Explorer */
 
 @-ms-keyframes fadein {
     from {

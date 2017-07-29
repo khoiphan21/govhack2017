@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { PageWelcomeComponent } from './page-welcome/page-welcome.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DataService } from './data.service';
-import { PageDataComponent } from './page-data/page-data.component';
 import { D3Service } from 'd3-ng2-service';
 import { PageStatsComponent } from './page-stats/page-stats.component';
 
@@ -15,7 +14,6 @@ import { PageStatsComponent } from './page-stats/page-stats.component';
   declarations: [
     AppComponent,
     PageWelcomeComponent,
-    PageDataComponent,
     PageStatsComponent
   ],
   imports: [
