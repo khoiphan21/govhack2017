@@ -8,9 +8,9 @@ import { slideInDownAnimation } from '../animations';
   animations: [slideInDownAnimation]
 })
 export class PageStatsComponent implements OnInit {
-  @HostBinding('@slideInAnimation') routeAnimation = true;
-  @HostBinding('style.display') display = 'block';
-  @HostBinding('style.position') position = 'absolute';
+  // @HostBinding('@slideInAnimation') routeAnimation = true;
+  // @HostBinding('style.display') display = 'block';
+  // @HostBinding('style.position') position = 'absolute';
   constructor() { }
 
   ngOnInit() {

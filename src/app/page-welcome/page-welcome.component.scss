@@ -2,6 +2,7 @@
 @import '../sass/mixins';
 @import '../sass/globalStyles';
 .main-container {
+    font-size: 12pt;
     position: absolute;
     top: 0;
     left: 0;
@@ -14,6 +15,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     padding: 0 5vw;
+    line-height: 150%;
     .top-container {
         width: 100%;
         height: 25%;
@@ -91,9 +93,16 @@
     }
 }
 
-h1 {
+h1:nth-child(1) {
     color: white;
-    padding: 0;
-    margin: 0;
+    margin-top: 4vh;
+    margin-bottom: 2vh;
+    font-size: 46pt;
+}
+
+h1:nth-child(2) {
+    color: white;
+    margin-top: 6vh;
+    margin-bottom: 2vh;
     font-size: 46pt;
 }
