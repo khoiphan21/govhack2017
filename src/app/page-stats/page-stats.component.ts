@@ -14,34 +14,40 @@ export class PageStatsComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';
   private d3: D3;
-  private data = [1200, 1525, 1167, 1824, 245];
 
   constructor(d3Service: D3Service) { // passing d3 service into the consturctor
     this.d3 = d3Service.getD3(); // <-- obtain the d3 object from the D3 service
-   }
+  }
 
   ngOnInit() {
     let d3 = this.d3; // for convenience use a block scope variable
-    
-    d3.select('#arc')
-      .append('svg')
-        .attr('width', 600)
-        .attr('height', 400)
-        .style('background', '#ffffff')
-      .append('rect')
-        .attr('x', 200)
-        .attr('y', 200)
-        .attr('width', 200)
-        .attr('height', 200)
-        .style('fill', '#cb4b19')
+    let demographicdata = [45, 55];
+    let height = 400,
+      width = 600,
+      barWidth = 50,
+      barOffset = 5;
 
-    d3.select('#arc svg')
-      .append('circle')
-      .attr('cx', 300)
-      .attr('cy', 200)
-      .attr('r', 50)
-      .style('fill', '#840043')
 
+    let pieGenerator = d3.pie()
+      .startAngle(-0.5 * Math.PI)
+      .endAngle(0.5 * Math.PI);
+
+    let data = [10, 40, 30, 20, 60, 80];
+
+    // Create an arc generator with configuration
+    let arcGenerator = d3.arc()
+      .innerRadius(20)
+      .outerRadius(100);
+
+    let arcData = pieGenerator(data);
+
+    // Create a path element and set its d attribute
+    d3.select('#arc').append('svg')
+      .selectAll('path')
+      .data(arcData)
+      .enter()
+      .append('path')
+      .attr('d', <any>arcGenerator);
   }
 
 }
