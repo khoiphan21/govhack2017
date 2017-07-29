@@ -9,7 +9,7 @@ import { PageStatsP2Component } from '../page-stats-p2/page-stats-p2.component';
 import { PageLoadingComponent } from '../page-loading/page-loading.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: '', redirectTo: '/loading', pathMatch: 'full' },
   {
     path: 'welcome', component: PageWelcomeComponent,
     children: [
