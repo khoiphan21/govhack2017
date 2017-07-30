@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { slideInRightAnimation } from '../animations';
-
+declare var google: any;
 import * as _ from 'underscore';
 
 import { Demographic } from '../classes/demographic';
@@ -53,6 +53,18 @@ export class PageStats2Component implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    var hendra = { lat: -27.4180, lng: 153.0710 };
+
+    var map = new google.maps.Map(document.getElementById('top-map'), {
+      zoom: 14,
+      center: hendra
+    });
+
+    var markerMain = new google.maps.Marker({
+      position: hendra,
+      map: map,
+      title: 'Hendra',
+    });
     this.demographicData = this.dataService.getDemographicData('HENDRA');
     this.pointOfInterest = this.dataService.getPOI('HENDRA');
     this.publicFacilities = this.dataService.getPublicFacilities('HENDRA');

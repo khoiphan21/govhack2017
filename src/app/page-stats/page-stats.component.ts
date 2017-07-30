@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { slideInDownAnimation } from '../animations';
+declare var google: any;
 
 import * as _ from 'underscore';
 
@@ -61,6 +62,19 @@ export class PageStatsComponent implements OnInit {
   }
 
   ngOnInit() {
+    var nundah = { lat: -27.4020, lng: 153.0660 };
+
+    var map = new google.maps.Map(document.getElementById('top-map'), {
+      zoom: 14,
+      center: nundah
+    });
+
+    var markerMain = new google.maps.Marker({
+      position: nundah,
+      map: map,
+      title: 'Nundah',
+    });
+
     this.d3 = this.d3Service.getD3(); // <-- obtain the d3 object from the D3 service
     this.demographicData = this.dataService.getDemographicData('NUNDAH');
     this.pointOfInterest = this.dataService.getPOI('NUNDAH');

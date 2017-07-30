@@ -41,13 +41,58 @@
         height: 100%;
         overflow-y: scroll;
         .left-top {
-            height: 20%;
             display: flex;
-            align-items: flex-end;
-            padding: 0 2vw;
-            img {
-                cursor: pointer;
-                height: 10vh;
+            flex-direction: row;
+            padding: 5vh 2vw 0 2vw;
+            .top-dtl {
+                width: 45vw;
+                display: flex;
+                flex-direction: column;
+                .logo {
+                    margin-bottom: 5vh;
+                    cursor: pointer;
+                    height: 13vh;
+                    width: 18vw;
+                }
+                .back-button {
+                    @include row-center();
+                    justify-content: space-between;
+                    width: 7vw;
+                    cursor: pointer;
+                    img {
+                        width: 3vh;
+                        height: 3vh;
+                    }
+                    &:hover {
+                        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+                        transform: translate3d(0, 0, 0);
+                        backface-visibility: hidden;
+                        perspective: 1000px;
+                    }
+                }
+                .location {
+                    margin-top: 5vh;
+                    @include column-center();
+                    align-items: flex-start;
+                    .address {
+                        font-size: 24pt;
+                    }
+                    .location-dtl {
+                        font-size: 8pt;
+                        @include row-center();
+                        justify-content: space-between;
+                        width: 8vw; // span:nth-child(1) {}
+                        span:nth-child(2) {
+                            text-decoration: underline;
+                            color: $font-yellow;
+                        }
+                    }
+                }
+            }
+            #top-map {
+                margin-left: 4.5vw;
+                width: 35vw;
+                height: 40vh;
             }
         }
         .left-mid {
