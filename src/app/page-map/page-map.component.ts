@@ -1,5 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { slideInRightAnimation } from '../animations';
+import { ModalService } from '../modal.service';
 declare var google: any;
 
 @Component({
@@ -13,7 +14,9 @@ export class PageMapComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';
 
-  constructor() { }
+  constructor(
+    private modalService: ModalService
+  ) { }
 
   ngOnInit() {
     var nundah = { lat: -27.4020, lng: 153.0660 };
@@ -72,6 +75,8 @@ export class PageMapComponent implements OnInit {
     });
   }
 
-
+  showFilter() {
+    this.modalService.showModal('filter');
+  }
 
 }

@@ -1,6 +1,9 @@
 <div class="modal-wrapper" (click)="hideModal()">
-  <div class="message">
+  <div *ngIf="isUnavailable" class="message">
     <p>Sorry...</p>
     <p>This feature is not yet available :(</p>
+  </div>
+  <div *ngIf="isFilter">
+    <img src="/assets/images/change-parameters-popup.png">
   </div>
 </div>

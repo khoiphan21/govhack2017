@@ -7,6 +7,7 @@ import * as _ from 'underscore';
 export class ModalService {
 
   private isModalShown: boolean = false;
+  private modalType: string = 'unavailable';
 
   subscribers: AppSubscriber[] = [];
 
@@ -25,8 +26,18 @@ export class ModalService {
     return this.isModalShown;
   }
 
-  showModal() {
+  getModalType(): string {
+    return this.modalType;
+  }
+
+  showModal(type?: string) {
     this.isModalShown = true;
+    if (type == null) {
+      this.modalType = 'unavailable';
+    } else {
+      this.modalType = type;
+    }
+
     this.notifySubscribers();
   }
 
