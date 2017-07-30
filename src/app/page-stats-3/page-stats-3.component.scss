@@ -437,6 +437,7 @@
         }
     }
     .right-container {
+        @include column-center();
         width: 10vw;
         color: $font-blue-green;
         background: rgba(255, 255, 255, 0.7);
@@ -444,8 +445,8 @@
             line-height: 130%;
             width: 10vw;
             @include column-center();
-            position: absolute;
-            top: 250px;
+            // position: absolute;
+            // top: 250px;
             .arrow-button {
                 margin-top: 1vh;
                 @include transition-basic();
@@ -456,6 +457,7 @@
                 background-size: cover;
                 background-repeat: no-repeat;
                 &:hover {
+                    cursor: pointer;
                     background-image: url('/assets/buttons/button-active.png');
                 }
             }
@@ -470,7 +472,13 @@
         right: 0;
         @include row-center();
         text-align: center;
-        color: white;
+        color: $font-blue-green;
+        span {
+            border: $font-blue-green solid 2px;
+            padding: 1vh 1vw;
+            border-radius: 5px;
+            background: white
+        }
     }
 }
 
