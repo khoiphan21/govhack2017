@@ -33,7 +33,7 @@
             <span *ngIf="(industryText != industry && industryText != '') || isIndustryError ">Invalid location. Please choose from the drop-down menu.</span>
           </div>
           <p *ngIf="isIndustrySuggestionShown" (click)="selectIndustry()">{{industry}}</p>
-          <div class="parameters" *ngIf="isParamShown"></div>
+          <img src="assets/images/recommended.png" alt="Recommended" class="parameters" *ngIf="isParamShown && (industryText == industry && industryText != '') "/>
           <button type="submit" name="submit" (click)="toStatsPage()">
                     <span>ANALYZE</span><span>&#9655;</span>
                 </button>
