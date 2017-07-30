@@ -60,6 +60,7 @@
                 }
             }
             .right-mid {
+                @include column-center();
                 .selection {
                     transition: 0.5s;
                     cursor: pointer;
@@ -72,6 +73,7 @@
                     border: transparent solid 2px;
                     margin-top: 2vh;
                     border-radius: 5px;
+                    width: 90%;
                     .selection-left {
                         border-top-left-radius: 5px;
                         border-bottom-left-radius: 5px;
@@ -105,12 +107,45 @@
                 }
                 .definition {
                     @include transition-basic();
-                    font-size: 10pt;
-                    margin-top: 2vh;
+                    border: transparent solid 2px !important;
+                    border-radius: 2px;
+                    border: none;
+                    color: white;
+                    text-transform: uppercase;
                     float: right;
+                    padding: 0.5vh 1vw;
+                    display: flex;
+                    justify-content: center;
+                    min-width: 8vw;
+                    margin-top: 4vh;
+                    display: flex;
+                    align-items: baseline;
+                    font-size: 12pt;
+                    background: rgb(114, 135, 128);
+                    /* For browsers that do not support gradients */
+                    background: -webkit-linear-gradient(left, darken(rgb(114, 135, 128), 10), #3f8a6c);
+                    /* For Safari 5.1 to 6.0 */
+                    background: -o-linear-gradient(right, darken(rgb(114, 135, 128), 10), #3f8a6c);
+                    /* For Opera 11.1 to 12.0 */
+                    background: -moz-linear-gradient(right, darken(rgb(114, 135, 128), 10), #3f8a6c);
+                    /* For Firefox 3.6 to 15 */
+                    background: linear-gradient(to right, darken(rgb(114, 135, 128), 10), #3f8a6c);
+                    /* Standard syntax */
                     cursor: pointer;
                     &:hover {
                         color: darken($theme-green, 15);
+                    }
+                    &:active {
+                        background: rgb(114, 135, 128);
+                        /* For browsers that do not support gradients */
+                        background: -webkit-linear-gradient(left, #3f8a6c, darken(rgb(114, 135, 128), 10));
+                        /* For Safari 5.1 to 6.0 */
+                        background: -o-linear-gradient(right, #3f8a6c, darken(rgb(114, 135, 128), 10));
+                        /* For Opera 11.1 to 12.0 */
+                        background: -moz-linear-gradient(right, #3f8a6c, darken(rgb(114, 135, 128), 10));
+                        /* For Firefox 3.6 to 15 */
+                        background: linear-gradient(to right, #3f8a6c, darken(rgb(114, 135, 128), 10));
+                        /* Standard syntax */
                     }
                 }
             }
