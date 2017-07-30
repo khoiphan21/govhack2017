@@ -34,7 +34,8 @@
           </div>
           <p *ngIf="isIndustrySuggestionShown" (click)="selectIndustry()">{{industry}}</p>
           <img src="assets/images/recommended.png" alt="Recommended" class="parameters" *ngIf="isParamShown && (industryText == industry && industryText != '') "/>
-          <button type="submit" name="submit" (click)="toStatsPage()">
+          <button type="submit" name="submit" (click)="toStatsPage()"
+          *ngIf="isParamShown && (industryText == industry && industryText != '') ">
                     <span>ANALYZE</span><span>&#9655;</span>
                 </button>
         </form>
