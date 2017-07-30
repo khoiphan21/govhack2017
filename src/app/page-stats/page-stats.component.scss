@@ -400,6 +400,124 @@
                     }
                 }
             }
+            .marital {
+                font-size: 12pt;
+                margin-top: 7vh;
+                .marital-dtl {
+                    display: grid;
+                    grid-template-columns: 20vw 20vw 20vw 20vw;
+                    grid-row-gap: 10vh;
+                    margin-top: 2vh;
+                    .marital-dtl-data {
+                        @include row-center();
+                        align-items: flex-end;
+                        width: 17vw;
+                        img {
+                            max-height: 30vh;
+                            max-width: 17vw;
+                        }
+                    }
+                }
+            }
+            .dwelling {
+                font-size: 12pt;
+                margin-top: 7vh;
+                .dwelling-dtl {
+                    display: grid;
+                    grid-template-columns: 20vw 20vw 20vw 20vw;
+                    grid-row-gap: 10vh;
+                    margin-top: 2vh;
+                    .dwelling-dtl-data {
+                        @include row-center();
+                        align-items: flex-end;
+                        width: 17vw;
+                        img {
+                            max-height: 30vh;
+                            max-width: 12vw;
+                        }
+                    }
+                }
+            }
+            .crime {
+                margin-top: 10vh;
+                display: flex;
+                flex-direction: column;
+                .crime-title {
+                    font-size: 24pt;
+                    text-transform: uppercase;
+                    margin-bottom: 7vh;
+                }
+                .crime-dtl {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 5vh;
+                    .graph {
+                        img {
+                            height: 45vh;
+                        }
+                    }
+                    .data {
+                        margin-left: 13vw;
+                        align-self: center;
+                        line-height: 100%;
+                        align-items: flex-start;
+                        div {
+                            @include column-center();
+                            align-items: flex-start;
+                            span:nth-child(1) {
+                                margin: 0;
+                                font-size: 10pt;
+                                text-transform: uppercase;
+                            }
+                            span:nth-child(2) {
+                                font-size: 16pt;
+                                margin-top: 2vh;
+                                margin-bottom: 5vh;
+                            }
+                            ol {
+                                line-height: 150%;
+                                padding-top: 0;
+                                padding-left: 1.5vw;
+                                margin-top: 0;
+                                font-size: 16pt;
+                            }
+                        }
+                    }
+                }
+            }
+            .marketplace {
+                font-size: 10pt;
+                margin-top: 7vh;
+                .marketplace-dtl {
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-top: 5vh;
+                    .marketplace-dtl-data {
+                        width: 30vw;
+                        @include column-center();
+                        align-items: flex-start;
+                        line-height: 150%;
+                        span {
+                            text-transform: uppercase;
+                        }
+                        .number {
+                            font-size: 16pt;
+                        }
+                        article {
+                            display: flex;
+                            justify-content: flex-start;
+                            span:nth-child(1) {
+                                margin-right: 3vw;
+                            }
+                            span:nth-child(2) {
+                                color: $font-yellow;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .right-container {
