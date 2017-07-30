@@ -20,22 +20,39 @@
     line-height: 150%;
     .main-container-left {
         align-self: flex-start;
-        margin-top: 8vh;
+        margin-top: 12.5vh;
         width: 40%;
     }
     .main-container-right {
         @include column-center();
-        width: 40%;
-        margin-right: 10vw;
+        width: 35%;
+        margin-right: 15vw;
         .mid-container {
             .form {
+                width: 100%;
+                form {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
                 div {
-                    input {
-                        margin-left: 1vw;
+                    width: 100%;
+
+                    input,
+                    span,
+                    p {
+                        width: 100%;
                     }
                 }
+                p {
+                    width: 100%;
+                }
                 button {
+                    align-self: flex-end;
                     margin-right: 1vw;
+                    width: 30%;
                 }
                 div.parameters {
                     width: 100%;
@@ -44,7 +61,9 @@
                     background-size: 100% 100%;
                 }
                 img.parameters {
-                    width: 40vw;
+                    // height: 60vh;
+                    width: 100%;
+                    margin-bottom: 0;
                 }
             }
         }
