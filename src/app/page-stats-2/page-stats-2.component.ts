@@ -9,6 +9,7 @@ import { CountryOfBirth } from '../classes/countryOfBirth';
 import { PointOfInterest } from '../classes/pointOfInterest';
 import { PublicFacilities } from '../classes/publicFacilities';
 import { ModalService } from '../modal.service';
+import { D3Service, D3 } from 'd3-ng2-service';
 
 @Component({
   selector: 'app-page-stats-2',
@@ -51,10 +52,16 @@ export class PageStats2Component implements OnInit {
     '#CE3E77',
   ]; // index must match the index of the countries
 
+  d3: D3;
+
   constructor(private dataService: DataService,
-  private modalService: ModalService) { }
+  private modalService: ModalService,
+private d3Service: D3Service) { }
 
   ngOnInit() {
+    // Retrieve D3
+    this.d3 = this.d3Service.getD3();
+
     var hendra = { lat: -27.4180, lng: 153.0710 };
 
     var map = new google.maps.Map(document.getElementById('top-map'), {
@@ -107,6 +114,48 @@ export class PageStats2Component implements OnInit {
     _.each(countriesOfBirth, value => {
       this.ethnicityValues.push(`${value / maxPeople * 100}%`)
     })
+
+    // DRAW THE DONUT CHART
+    let d3 = this.d3; // for convenience use a block scope variable
+    let height,
+      width,
+      barWidth = 50,
+      barOffset = 5,
+      radius;
+    // Setup params for the chart    
+    let parentElement = document.getElementById('chart-wrapper');
+    height = parentElement.getBoundingClientRect().height;
+    width = parentElement.getBoundingClientRect().width;
+    radius = Math.min(height, width) / 2;
+
+    let pie = d3.pie()
+      .value((d: number) => {return d;})
+      .sort(null);
+
+    let color = ["#C3A485", "#067376"];
+    let demographicdata = [
+      this.demographicData.male, this.demographicData.female
+    ];
+
+    // Create an arc generator with configuration
+    let arc = d3.arc()
+      .innerRadius(radius * 0.85)
+      .outerRadius(radius);
+
+    let svg = d3.select('svg.chart')
+      .attr("width", width)
+      .attr("height", height)
+    .append('g')
+      .attr("transform", `translate(${width / 2}, ${height / 2})`);
+
+    let path = svg.selectAll('path')
+      .data(pie(demographicdata))
+      .enter().append('path')
+      .attr('d', <any> arc)
+      .attr('fill', (d, i) => {
+        return color[i];
+      });
+    // END DONUT CHART
   }
 
   showModal() {

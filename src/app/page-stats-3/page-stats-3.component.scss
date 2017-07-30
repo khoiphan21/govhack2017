@@ -507,6 +507,11 @@
     text-transform: uppercase;
 }
 
+.largeTitle {
+    font-size: 20pt;
+    color: $theme-orange;
+}
+
 // animations for shaking the button
 @keyframes shake {
     10%,
