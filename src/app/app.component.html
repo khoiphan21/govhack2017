@@ -1,2 +1,2 @@
-<app-modal *ngIf="isModalShown"></app-modal>
+<app-modal [style.display]="isModalShown ? 'block' : 'none'"></app-modal>
 <router-outlet></router-outlet>

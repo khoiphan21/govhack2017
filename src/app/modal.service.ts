@@ -36,6 +36,8 @@ export class ModalService {
       this.modalType = 'unavailable';
     } else {
       this.modalType = type;
+      console.log('type is not null')
+      console.log(this.modalType)
     }
 
     this.notifySubscribers();
