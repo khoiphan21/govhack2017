@@ -109,14 +109,21 @@
                     grid-template-columns: 20vw 20vw 20vw 20vw;
                     grid-row-gap: 10vh;
                     margin-top: 2vh;
+                    .star {
+                        position: relative;
+                        bottom: 7vh;
+                        left: 0;
+                        color: $font-yellow;
+                    }
                     .poi-dtl-data {
-                        width: 17vw;
+                        width: 20vw;
                         @include row-center();
                         justify-content: flex-start;
                         img {
                             height: 15vh;
                         }
                         article {
+                            width: 6vw;
                             @include column-center();
                             align-items: flex-start;
                             line-height: 150%;
@@ -305,7 +312,7 @@
                 }
                 .generational-breakdown {
                     width: 100%;
-                    padding-right: 20vw;
+                    padding-right: 15.5vw;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -514,6 +521,22 @@
                                 color: $font-yellow;
                                 text-decoration: underline;
                             }
+                        }
+                    }
+                }
+            }
+            .realestate {
+                font-size: 10pt;
+                margin-top: 7vh;
+                .realestate-dtl {
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-top: 5vh;
+                    .realestate-dtl-data {
+                        display: flex;
+                        img {
+                            height: 25vh;
+                            margin-right: 2vw;
                         }
                     }
                 }
