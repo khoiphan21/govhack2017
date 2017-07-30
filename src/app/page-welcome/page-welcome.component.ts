@@ -12,11 +12,41 @@ export class PageWelcomeComponent implements OnInit {
   address: string = '1/1207 Sandgate Rd, Nundah QLD 4102';
   isError: boolean = false;
   
+  isIndustrySectionShown: boolean = false;
+  isIndustrySuggestionShown: boolean = false;
+  industryText: string = '';
+  industry: string = 'Retail > Hospitality > Dessert Stores'
+  isParamShown: boolean = false;
+  isIndustryError: boolean = false;
+  
   constructor(
     private router: Router
   ) { }
 
   ngOnInit() {
+  }
+
+  showIndustrySection() {
+    if (this.inputText == this.address) {
+      this.isIndustrySectionShown = true;
+    } else {
+      this.isError = true;
+      this.hideSuggestion();
+    }
+  }
+
+  showIndustrySuggestion(event: Event) {
+    this.isIndustrySuggestionShown = true;
+    event.preventDefault();
+    event.stopPropagation();
+  }
+  hideIndustrySuggestion() {
+    this.isIndustrySuggestionShown = false;
+  }
+  selectIndustry() {
+    this.industryText = this.industry;
+    this.isParamShown = true;
+    this.isError = false;
   }
 
   showSuggestion(event: Event) {
@@ -32,13 +62,36 @@ export class PageWelcomeComponent implements OnInit {
     this.isError = false;
   }
 
+  hideAllSuggestion() {
+    this.hideSuggestion();
+    this.hideIndustrySuggestion();
+  }
+
   toStatsPage() {
-    if (this.inputText == this.address) {
+    if (this.inputText == this.address && this.industryText == this.industry) {
+      // Reset all values
+      this.resetValues();
+
       this.router.navigate(['welcome/stats-nundah'])
-    } else {
+    } else if (this.inputText == this.address) {
       this.isError = true;
-      this.hideSuggestion();
+      this.hideAllSuggestion();
+    } else if (this.industryText == this.industry) {
+      this.isIndustryError = true;
+      this.hideAllSuggestion();
     }
+  }
+
+  resetValues() {
+    this.isSuggestionShown = false;
+    this.inputText = '';
+    this.isError = false;
+
+    this.isIndustrySectionShown = false;
+    this.isIndustrySuggestionShown = false;
+    this.industryText = '';
+    this.isParamShown = false;
+    this.isIndustryError = false;
   }
 
 }

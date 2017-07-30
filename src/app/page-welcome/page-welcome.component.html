@@ -1,25 +1,48 @@
-<section class="main-container" (click)="hideSuggestion()">
+<section class="main-container" (click)="hideAllSuggestion()">
+  <section class="main-container-left">
     <section class="top-container">
-        <img src="/assets/images/logo.png" alt="company logo">
+      <img src="/assets/images/logo.png" alt="company logo">
     </section>
     <section class="mid-container">
-        <section class="tagline">
-            <h1>Find your next</h1>
-            <h1>Business Location</h1>
-        </section>
-        <section class="form">
-            <form action="">
-                <div>
-                    <input list="browsers" [(ngModel)]="inputText" type="text" name="location" placeholder="Enter an address of a high performing site..." (click)="showSuggestion($event)" />
-                    <span *ngIf="(inputText != address && inputText != '') || isError ">Invalid location. Please choose from the drop-down menu.</span>
-                </div>
-                <p *ngIf="isSuggestionShown" (click)="selectAddress()">{{address}}</p>
-                <button type="submit" name="submit" (click)="toStatsPage()">
+      <section class="tagline">
+        <h1>Find your next</h1>
+        <h1>Business Location</h1>
+      </section>
+      <section class="form">
+        <form action="">
+          <div>
+            <input list="browsers" [(ngModel)]="inputText" type="text" name="location" placeholder="Enter an address of a high performing site..."
+              (click)="showSuggestion($event)" />
+            <span *ngIf="(inputText != address && inputText != '') || isError ">Invalid location. Please choose from the drop-down menu.</span>
+          </div>
+          <p *ngIf="isSuggestionShown" (click)="selectAddress()">{{address}}</p>
+          <button type="submit" name="submit" (click)="showIndustrySection()">
+                    <span>NEXT</span><span>&#9655;</span>
+                </button>
+        </form>
+      </section>
+    </section>
+  </section>
+  <section class="main-container-right">
+    <section class="mid-container" *ngIf="isIndustrySectionShown">
+      <section class="form">
+        <form action="">
+          <div>
+            <input list="browsers" [(ngModel)]="industryText" type="text" name="industry" placeholder="Pick your industry. E.g. Retail > Hospitality > Dessert"
+              (click)="showIndustrySuggestion($event)" />
+            <span *ngIf="(industryText != industry && industryText != '') || isIndustryError ">Invalid location. Please choose from the drop-down menu.</span>
+          </div>
+          <p *ngIf="isIndustrySuggestionShown" (click)="selectIndustry()">{{industry}}</p>
+          <div class="parameters" *ngIf="isParamShown"></div>
+          <button type="submit" name="submit" (click)="toStatsPage()">
                     <span>ANALYZE</span><span>&#9655;</span>
                 </button>
-            </form>
-        </section>
+        </form>
+      </section>
+
     </section>
+  </section>
+
 </section>
 
 <router-outlet></router-outlet>
