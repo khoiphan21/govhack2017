@@ -8,6 +8,7 @@ import { DataService } from '../data.service';
 import { CountryOfBirth } from '../classes/countryOfBirth';
 import { PointOfInterest } from '../classes/pointOfInterest';
 import { PublicFacilities } from '../classes/publicFacilities';
+import { ModalService } from '../modal.service';
 
 @Component({
   selector: 'app-page-stats-5',
@@ -50,7 +51,8 @@ export class PageStats5Component implements OnInit {
     '#CE3E77',
   ]; // index must match the index of the countries
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService,
+  private modalService: ModalService) { }
 
   ngOnInit() {
      var wavellHeights = { lat: -27.3930, lng: 153.0480 };
@@ -105,6 +107,10 @@ export class PageStats5Component implements OnInit {
     _.each(countriesOfBirth, value => {
       this.ethnicityValues.push(`${value / maxPeople * 100}%`)
     })
+  }
+
+  showModal() {
+    this.modalService.showModal();
   }
 
 }

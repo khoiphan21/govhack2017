@@ -8,6 +8,7 @@ import { DataService } from '../data.service';
 import { CountryOfBirth } from '../classes/countryOfBirth';
 import { PointOfInterest } from '../classes/pointOfInterest';
 import { PublicFacilities } from '../classes/publicFacilities';
+import { ModalService } from '../modal.service';
 
 @Component({
   selector: 'app-page-stats-4',
@@ -50,7 +51,8 @@ export class PageStats4Component implements OnInit {
     '#CE3E77',
   ]; // index must match the index of the countries
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService,
+  private modalService: ModalService) { }
 
   ngOnInit() {
     var clayfield = { lat: -27.4180, lng: 153.0570 };
@@ -107,5 +109,8 @@ export class PageStats4Component implements OnInit {
     })
   }
 
+  showModal() {
+    this.modalService.showModal();
+  }
 }
 

@@ -8,6 +8,7 @@ import { DataService } from '../data.service';
 import { CountryOfBirth } from '../classes/countryOfBirth';
 import { PointOfInterest } from '../classes/pointOfInterest';
 import { PublicFacilities } from '../classes/publicFacilities';
+import { ModalService } from '../modal.service';
 
 @Component({
   selector: 'app-page-stats-1',
@@ -50,7 +51,10 @@ export class PageStats1Component implements OnInit {
     '#CE3E77',
   ]; // index must match the index of the countries
 
-  constructor(private dataService: DataService) { }
+  constructor(
+    private dataService: DataService,
+    private modalService: ModalService
+  ) { }
 
   ngOnInit() {
     var kedron = { lat: -27.4070, lng: 153.0340 };
@@ -107,4 +111,7 @@ export class PageStats1Component implements OnInit {
     })
   }
 
+  showModal() {
+    this.modalService.showModal();
+  }
 }
