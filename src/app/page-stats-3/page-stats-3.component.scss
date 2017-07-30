@@ -143,22 +143,42 @@
                     grid-template-columns: 20vw 20vw 20vw 20vw;
                     grid-row-gap: 10vh;
                     margin-top: 2vh;
+                    .star {
+                        font-size: 21pt;
+                        position: relative;
+                        bottom: 7vh;
+                        left: 0;
+                        color: $font-yellow;
+                    }
                     .poi-dtl-data {
-                        width: 17vw;
+                        width: 18vw;
                         @include row-center();
                         justify-content: flex-start;
                         img {
                             height: 15vh;
                         }
-                        article {
+                        .type {
                             @include column-center();
                             align-items: flex-start;
                             line-height: 150%;
                             margin-left: 1vw;
-                            span:nth-child(1) {
-                                font-size: 16pt;
+                            .type-number {
+                                display: flex;
+                                span:nth-child(1) {
+                                    font-size: 16pt;
+                                }
+                                .minus {
+                                    font-size: 16pt;
+                                    color: red;
+                                    margin-left: 0.5vw;
+                                }
+                                .plus {
+                                    font-size: 16pt;
+                                    color: green;
+                                    margin-left: 0.5vw;
+                                }
                             }
-                            span:nth-child(2) {
+                            .type-name {
                                 font-size: 10pt;
                                 text-transform: uppercase;
                             }

@@ -29,31 +29,42 @@
                 <span class="title">POINTS OF INTEREST</span>
                 <section class="poi-dtl">
                     <article class="poi-dtl-data data1">
+                        <span class="star">&#9733;</span>
                         <img src="/assets/icons/restaurant.png" alt="restaurant icon">
-                        <article>
-                            <span>{{pointOfInterest.restaurants}}</span>
-                            <span>RESTAURANTS</span>
+                        <article class="type">
+                            <article class="type-number">
+                                <span>{{pointOfInterest.restaurants}}</span>
+                            </article>
+                            <span class="type-name">RESTAURANTS</span>
                         </article>
                     </article>
                     <article class="poi-dtl-data data2">
+                        <span class="star">&#9733;</span>
                         <img src="/assets/icons/cafe.png" alt="cafe icon">
-                        <article>
-                            <span>{{pointOfInterest.cafe}}</span>
-                            <span>Cafe</span>
+                        <article class="type">
+                            <article class="type-number">
+                                <span>{{pointOfInterest.cafe}}</span>
+                            </article>
+                            <span class="type-name">Cafe</span>
                         </article>
                     </article>
                     <article class="poi-dtl-data data3">
+                        <span class="star">&#9733;</span>
                         <img src="/assets/icons/park.png" alt="park icon">
-                        <article>
-                            <span>{{pointOfInterest.parks}}</span>
-                            <span>parks</span>
+                        <article class="type">
+                            <article class="type-number">
+                                <span>{{pointOfInterest.parks}}</span>
+                            </article>
+                            <span class="type-name">Parks</span>
                         </article>
                     </article>
                     <article class="poi-dtl-data data4">
                         <img src="/assets/icons/shopping-mall.png" alt="shopping mall icon">
-                        <article>
-                            <span>{{pointOfInterest.shoppingMalls}}</span>
-                            <span>shopping malls</span>
+                        <article class="type">
+                            <article class="type-number">
+                                <span>{{pointOfInterest.shoppingMalls}}</span>
+                            </article>
+                            <span class="type-name">Shopping Malls</span>
                         </article>
                     </article>
                 </section>
@@ -62,25 +73,31 @@
                 <span class="title">public facilities</span>
                 <section class="poi-dtl">
                     <article class="poi-dtl-data data5">
+                        <span class="star">&#9733;</span>
                         <img src="/assets/icons/schools.png" alt="school icon">
-                        <article>
-                            <span>{{publicFacilities.schools}}</span>
-                            <span>schools</span>
+                        <article class="type">
+                            <article class="type-number">
+                                <span>{{publicFacilities.schools}}</span>
+                            </article>
+                            <span class="type-name">Schools</span>
                         </article>
-
                     </article>
                     <article class="poi-dtl-data data6">
                         <img src="/assets/icons/hospital.png" alt="hospital icon">
-                        <article>
-                            <span>{{publicFacilities.hospitals}}</span>
-                            <span>hospitals</span>
+                        <article class="type">
+                            <article class="type-number">
+                                <span>{{publicFacilities.hospitals}}</span>
+                            </article>
+                            <span class="type-name">Hospitals</span>
                         </article>
                     </article>
                     <article class="poi-dtl-data data7">
                         <img src="/assets/icons/bus-stop.png" alt="bus stop icon">
-                        <article>
-                            <span>{{publicFacilities.busStops}}</span>
-                            <span>bus stops</span>
+                        <article class="type">
+                            <article class="type-number">
+                                <span>{{publicFacilities.busStops}}</span>
+                            </article>
+                            <span class="type-name">Bus Stops</span>
                         </article>
                     </article>
                 </section>
@@ -262,14 +279,14 @@
                         <span class="number">4</span>
                         <article>
                             <span>competitors</span>
-                            <span>view all</span>
+                            <span (click)="showModal()">view all</span>
                         </article>
                     </article>
                     <article class="marketplace-dtl-data">
                         <span class="number">10</span>
                         <article>
                             <span>Complementary business</span>
-                            <span>view all</span>
+                            <span (click)="showModal()">view all</span>
                         </article>
                     </article>
                 </section>
