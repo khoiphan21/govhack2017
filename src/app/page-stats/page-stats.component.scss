@@ -109,13 +109,6 @@
                     grid-template-columns: 20vw 20vw 20vw 20vw;
                     grid-row-gap: 10vh;
                     margin-top: 2vh;
-                    .star {
-                        font-size: 18pt;
-                        position: relative;
-                        bottom: 7vh;
-                        left: 0;
-                        color: $font-yellow;
-                    }
                     .poi-dtl-data {
                         width: 20vw;
                         @include row-center();
