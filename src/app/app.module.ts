@@ -19,6 +19,8 @@ import { PageStats3Component } from './page-stats-3/page-stats-3.component';
 import { PageStats4Component } from './page-stats-4/page-stats-4.component';
 import { PageStats5Component } from './page-stats-5/page-stats-5.component';
 import { PageMapP2Component } from './page-map-p2/page-map-p2.component';
+import { ModalComponent } from './modal/modal.component';
+import { ModalService } from './modal.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { PageMapP2Component } from './page-map-p2/page-map-p2.component';
     PageStats3Component,
     PageStats4Component,
     PageStats5Component,
-    PageMapP2Component
+    PageMapP2Component,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { PageMapP2Component } from './page-map-p2/page-map-p2.component';
   ],
   providers: [
     DataService,
-    D3Service
+    D3Service,
+    ModalService
   ],
   bootstrap: [AppComponent]
 })
