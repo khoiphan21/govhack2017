@@ -58,9 +58,9 @@ export const slideInRightAnimation: AnimationEntryMetadata =
         ])
     ]);
 
-    export const fadeOutAnimation: AnimationEntryMetadata =
-   trigger('fadeOutAnimation', [
-       state('*',
+export const fadeOutAnimation: AnimationEntryMetadata =
+    trigger('fadeOutAnimation', [
+        state('*',
             style({
                 position: 'fixed',
                 top: 0,
@@ -70,17 +70,53 @@ export const slideInRightAnimation: AnimationEntryMetadata =
                 opacity: 1
             })
         ),
-       // route 'enter' transition
-       transition(':leave', [
-           // styles at start of transition
-           style({
-               opacity: 1
-           }),
-           // animation and styles at end of transition
-           animate('.3s', style({
-               opacity: 0
-           }))
-       ]),
-   ]);
+        // route 'enter' transition
+        transition(':leave', [
+            // styles at start of transition
+            style({
+                opacity: 1
+            }),
+            // animation and styles at end of transition
+            animate('.3s', style({
+                opacity: 0
+            }))
+        ]),
+    ]);
+
+    export const fadeAnimation: AnimationEntryMetadata =
+    trigger('fadeAnimation', [
+        state('*',
+            style({
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                opacity: 1
+            })
+        ),
+        // route 'enter' transition
+        transition(':enter', [
+            // styles at start of transition
+            style({
+                opacity: 0
+            }),
+            // animation and styles at end of transition
+            animate('.3s', style({
+                opacity: 1
+            }))
+        ]),
+        // route 'enter' transition
+        transition(':leave', [
+            // styles at start of transition
+            style({
+                opacity: 1
+            }),
+            // animation and styles at end of transition
+            animate('.3s', style({
+                opacity: 0
+            }))
+        ]),
+    ]);
 
 

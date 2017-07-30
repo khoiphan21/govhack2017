@@ -27,7 +27,7 @@ const routes: Routes = [
       {  path: 'stats-clayfield', component: PageStats4Component },
       {  path: 'stats-wavellHeights', component: PageStats5Component },
       {  path: 'maps', component: PageMapComponent },
-      {  path: 'filter', component: PageFilterComponent },
+      {  path: 'filter', component: PageFilterComponent },  
       {  path: 'maps2', component: PageMapP2Component },
       {  path: 'stats2', component: PageStatsP2Component }
     ]
