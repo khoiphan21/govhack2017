@@ -21,6 +21,7 @@ import { PageStats5Component } from './page-stats-5/page-stats-5.component';
 import { PageMapP2Component } from './page-map-p2/page-map-p2.component';
 import { ModalComponent } from './modal/modal.component';
 import { ModalService } from './modal.service';
+import { PageFilterComponent } from './page-filter/page-filter.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ModalService } from './modal.service';
     PageStats4Component,
     PageStats5Component,
     PageMapP2Component,
-    ModalComponent
+    ModalComponent,
+    PageFilterComponent
   ],
   imports: [
     BrowserModule,
