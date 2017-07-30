@@ -73,7 +73,7 @@
                     border: transparent solid 2px;
                     margin-top: 2vh;
                     border-radius: 5px;
-                    width: 90%;
+                    width: 100%;
                     .selection-left {
                         border-top-left-radius: 5px;
                         border-bottom-left-radius: 5px;
@@ -84,9 +84,10 @@
                         background: rgba(255, 255, 255, 0.7);
                     }
                     .selection-right {
+                        font-weight: bold !important;
                         border-top-right-radius: 5px;
                         border-bottom-right-radius: 5px;
-                        font-size: 14pt;
+                        font-size: 12pt;
                         @include row-center();
                         justify-content: space-between;
                         width: 85%;
@@ -94,7 +95,6 @@
                         padding: 0 1vw;
                         span:nth-child(2) {
                             color: $font-blue-green;
-                            font-weight: bold;
                         }
                     }
                     &:hover {
@@ -106,6 +106,7 @@
                     }
                 }
                 .definition {
+                    align-self: center;
                     @include transition-basic();
                     border: transparent solid 2px !important;
                     border-radius: 2px;
@@ -153,6 +154,7 @@
     }
     
     .title {
+        align-self: flex-start;
         font-size: 12pt;
         text-transform: uppercase;
     }
