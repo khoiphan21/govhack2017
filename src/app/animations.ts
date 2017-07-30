@@ -19,7 +19,7 @@ export const slideInDownAnimation: AnimationEntryMetadata =
                 opacity: 0,
                 transform: 'translateY(100%)'
             }),
-            animate('0.8s ease-in')
+            animate('0.8s')
         ]),
         transition(':leave', [
             animate('0.8s', style({
@@ -51,7 +51,7 @@ export const slideInRightAnimation: AnimationEntryMetadata =
             animate('0.8s')
         ]),
         transition(':leave', [
-            animate('0.8s ease-out', style({
+            animate('0.8s', style({
                 opacity: 1,
                 transform: 'translateX(-100%)'
             }))
