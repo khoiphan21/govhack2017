@@ -110,7 +110,7 @@
                     grid-row-gap: 10vh;
                     margin-top: 2vh;
                     .star {
-                        font-size: 18pt;
+                        font-size: 21pt;
                         position: relative;
                         bottom: 7vh;
                         left: 0;
@@ -136,12 +136,12 @@
                                 .minus {
                                     font-size: 16pt;
                                     color: red;
-                                    margin-left: 1vw;
+                                    margin-left: 0.5vw;
                                 }
                                 .plus {
                                     font-size: 16pt;
                                     color: green;
-                                    margin-left: 1vw;
+                                    margin-left: 0.5vw;
                                 }
                             }
                             .type-name {
@@ -470,6 +470,11 @@
 .title {
     font-size: 12pt;
     text-transform: uppercase;
+}
+
+.largeTitle {
+    font-size: 20pt;
+    color: $theme-orange;
 }
 
 // animations for shaking the button
