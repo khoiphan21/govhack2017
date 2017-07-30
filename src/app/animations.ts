@@ -29,6 +29,35 @@ export const slideInDownAnimation: AnimationEntryMetadata =
         ])
     ]);
 
+// Animations for page-stats nundah
+export const pageStatsAnimation: AnimationEntryMetadata =
+    trigger('pageStatsAnimation', [
+        state('*',
+            style({
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                opacity: 1,
+                transform: 'translateX(0)'
+            })
+        ),
+        transition(':enter', [
+            style({
+                opacity: 0,
+                transform: 'translateY(100%)'
+            }),
+            animate('0.8s')
+        ]),
+        transition(':leave', [
+            animate('0.8s', style({
+                opacity: 1,
+                transform: 'translateX(-100%)'
+            }))
+        ])
+    ]);
+
 // Component transition animations
 export const slideInRightAnimation: AnimationEntryMetadata =
     trigger('slideInRightAnimation', [
@@ -83,7 +112,7 @@ export const fadeOutAnimation: AnimationEntryMetadata =
         ]),
     ]);
 
-    export const fadeAnimation: AnimationEntryMetadata =
+export const fadeAnimation: AnimationEntryMetadata =
     trigger('fadeAnimation', [
         state('*',
             style({

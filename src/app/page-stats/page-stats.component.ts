@@ -1,5 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
-import { slideInDownAnimation } from '../animations';
+import { pageStatsAnimation } from '../animations';
+import { Router, NavigationEnd } from '@angular/router';
+
 declare var google: any;
 
 import * as _ from 'underscore';
@@ -18,13 +20,16 @@ import { ModalService } from '../modal.service';
   selector: 'app-page-stats',
   templateUrl: './page-stats.component.html',
   styleUrls: ['./page-stats.component.scss'],
-  animations: [slideInDownAnimation]
+  animations: [pageStatsAnimation]
 })
 export class PageStatsComponent implements OnInit {
-  @HostBinding('@slideInAnimation') routeAnimation = true;
+  @HostBinding('@pageStatsAnimation') routeAnimation = true;
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'absolute';
   private d3: D3;
+
+  // Storing previous URL for animation
+  previousURL: string;
 
   // Variables for the points of interests
   pointOfInterest: PointOfInterest;
@@ -59,11 +64,30 @@ export class PageStatsComponent implements OnInit {
   constructor(
     private d3Service: D3Service,
     private dataService: DataService,
-    private modalService: ModalService
+    private modalService: ModalService,
+    private router: Router
   ) { // passing d3 service into the constructor
   }
 
   ngOnInit() {
+    /**
+     * FOR ANIMATION
+     */
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (this.previousURL == '/welcome/stats-nundah' 
+          && event.url == '/welcome') {
+          // Then change animation to slide down instead of left
+        }
+
+        // After handling everything, store the previous URL
+        this.previousURL = event.url;
+      }
+    })
+
+    /**
+     * MAIN LOGIC STUFF
+     */
     var nundah = { lat: -27.4020, lng: 153.0660 };
 
     var map = new google.maps.Map(document.getElementById('top-map'), {
