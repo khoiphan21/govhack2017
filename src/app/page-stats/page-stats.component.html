@@ -1,22 +1,29 @@
 <section class="main-container">
     <section class="left-container">
         <section class="left-top">
-            <img src="/assets/images/logo.png" alt="company logo" routerLink="/welcome">
+            <section class="top-dtl">
+                <img class="logo" src="/assets/images/logo.png" alt="company logo" routerLink="/welcome">
+                <section class="back-button" routerLink="/welcome">
+                    <img src="/assets/buttons/back-green.png">
+                    <span>Go back</span>
+                </section>
+                <!-- This is the section for the address details -->
+                <section class="location">
+                    <span class="title">Exploring</span>
+                    <span class="address">1/1207 Sandgate Rd | NUNDAH, QLD 4012</span>
+                    <div class="location-dtl">
+                        <span>Within 10km</span>
+                        <span>change</span>
+                    </div>
+                </section>
+            </section>
+            <section id="top-map">
+
+            </section>
         </section>
         <section class="left-mid">
-            <section class="back-button" routerLink="/welcome">
-                <img src="/assets/buttons/back-green.png">
-                <span>Go back</span>
-            </section>
-            <!-- This is the section for the address details -->
-            <section class="location">
-                <span class="title">Exploring</span>
-                <span class="address">1/1207 Sandgate Road | NUNDAH, QLD 4012</span>
-                <div class="location-dtl">
-                    <span>Within 10km</span>
-                    <span>change</span>
-                </div>
-            </section>
+
+
             <!-- This is the section for point of interest -->
             <section class="poi">
                 <span class="title">POINTS OF INTEREST</span>
@@ -189,9 +196,9 @@
     </section>
     <section class="right-container">
         <section class="explore" routerLink="/welcome/maps">
-            <span>Explore</span>
-            <span>Similar</span>
-            <span>Places</span>
+            <span>Go to</span>
+            <span>Other Site</span>
+            <span>Recommendations</span>
             <div class="arrow-button"></div>
         </section>
     </section>

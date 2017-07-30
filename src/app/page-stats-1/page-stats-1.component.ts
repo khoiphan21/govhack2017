@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { slideInRightAnimation } from '../animations';
-
+declare var google: any;
 import * as _ from 'underscore';
 
 import { Demographic } from '../classes/demographic';
@@ -53,6 +53,18 @@ export class PageStats1Component implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    var kedron = { lat: -27.4070, lng: 153.0340 };
+
+    var map = new google.maps.Map(document.getElementById('top-map'), {
+      zoom: 14,
+      center: kedron
+    });
+
+    var markerMain = new google.maps.Marker({
+      position: kedron,
+      map: map,
+      title: 'Kedron',
+    });
     this.demographicData = this.dataService.getDemographicData('KEDRON');
     this.pointOfInterest = this.dataService.getPOI('KEDRON');
     this.publicFacilities = this.dataService.getPublicFacilities('KEDRON');
