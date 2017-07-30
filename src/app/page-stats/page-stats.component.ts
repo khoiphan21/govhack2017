@@ -11,6 +11,7 @@ import { DataService } from '../data.service';
 import { CountryOfBirth } from '../classes/countryOfBirth';
 import { PointOfInterest } from '../classes/pointOfInterest';
 import { PublicFacilities } from '../classes/publicFacilities';
+import { ModalService } from '../modal.service';
 
 
 @Component({
@@ -57,7 +58,8 @@ export class PageStatsComponent implements OnInit {
 
   constructor(
     private d3Service: D3Service,
-    private dataService: DataService
+    private dataService: DataService,
+    private modalService: ModalService
   ) { // passing d3 service into the constructor
   }
 
@@ -158,6 +160,10 @@ export class PageStatsComponent implements OnInit {
         return color[i];
       });
     // END DONUT CHART
+  }
+
+  showModal() {
+    this.modalService.showModal();
   }
 
 }

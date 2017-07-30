@@ -20,6 +20,7 @@ export class AppComponent implements AppSubscriber {
 
   notify() {
     this.isModalShown = this.modalService.getModalStatus();
+    console.log(this.isModalShown);
   }
 
   hideModal() {
