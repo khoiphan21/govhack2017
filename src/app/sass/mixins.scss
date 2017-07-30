@@ -125,7 +125,7 @@
  */
 
 @mixin media($type) {
-    $large-screen-size: "(min-width: 1100px) and (max-width: 1500px)";
+    $large-screen-size: "(min-width: 1100px) and (max-width: 1400px)";
     $medium-screen-size: "(min-width: 800px) and (max-width: 1100px)";
     $small-screen-size: "(min-width: 500px) and (max-width: 800px)";
     $mobile-screen-size: "(max-width: 500px)";

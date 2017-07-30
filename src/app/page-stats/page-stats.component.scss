@@ -75,6 +75,9 @@
                     @include column-center();
                     align-items: flex-start;
                     .address {
+                        @include media(large-screen) {
+                            font-size: 20pt;
+                        }
                         font-size: 24pt;
                     }
                     .location-dtl {

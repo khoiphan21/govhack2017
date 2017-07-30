@@ -222,11 +222,17 @@
     }
 }
 
+h1 {
+    @include media(large-screen) {
+        // font-size: 40pt;
+    }
+    font-size: 3vw;
+}
+
 h1:nth-child(1) {
     color: white;
     margin-top: 4vh;
     margin-bottom: 2vh;
-    font-size: 46pt;
     -webkit-animation: fadein 2s;
     -moz-animation: fadein 2s;
     -ms-animation: fadein 2s;
@@ -239,7 +245,6 @@ h1:nth-child(2) {
     color: white;
     margin-top: 6vh;
     margin-bottom: 2vh;
-    font-size: 46pt;
     -webkit-animation: fadein 2s;
     -moz-animation: fadein 2s;
     -ms-animation: fadein 2s;
